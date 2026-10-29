@@ -10,16 +10,24 @@
  */
 import type { Attachment } from 'svelte/attachments';
 import { DrawSVGPlugin, gsap, ScrollTrigger, SplitText } from './gsap';
+import { getLenis } from './smooth-scroll';
+import { kineticSplit } from './split';
 import {
 	DESKTOP,
 	distance,
 	duration,
 	ease,
 	FINE_POINTER,
+	kinetic as k,
+	kineticPresets,
+	kineticRange,
 	MOTION_OK,
 	MOTION_REDUCED,
 	revealStart,
-	stagger
+	stagger,
+	type KineticOptions,
+	type KineticPreset,
+	type KineticScroll
 } from './tokens';
 
 type Conditions = { motion: boolean; reduced: boolean };
@@ -438,4 +446,188 @@ export function mediaReveal(options: { parallax?: number } = {}): Attachment<HTM
 				);
 			}
 		});
+}
+
+/* ------------------------------------------------------------------ */
+/* Kinetic typography                                                  */
+/* ------------------------------------------------------------------ */
+
+/** A preset name from kineticPresets (motion/tokens.ts), one-off options, or false for none. */
+export type KineticEffect = KineticPreset | KineticOptions | false;
+
+function resolveKinetic(effect: KineticEffect) {
+	if (!effect) return null;
+	const options: KineticOptions = typeof effect === 'string' ? kineticPresets[effect] : effect;
+	const scroll = new Set<KineticScroll>(
+		options.scroll === undefined ? [] : typeof options.scroll === 'string' ? [options.scroll] : options.scroll
+	);
+	return { ...options, scroll };
+}
+
+/* Scroll velocity: one GSAP ticker callback shared by every subscriber, reading
+   Lenis (which already drives ScrollTrigger), so no extra scroll listener. */
+const velocitySubscribers = new Set<(skew: number) => void>();
+let currentSkew = 0;
+
+function velocityTick() {
+	const velocity = getLenis()?.velocity ?? 0;
+	const skew = gsap.utils.clamp(-k.skewMax, k.skewMax, -velocity * k.skewPerVelocity);
+	// Skip negligible changes, but always deliver the exact return to rest
+	if (skew === currentSkew || (skew !== 0 && Math.abs(skew - currentSkew) < 0.01)) return;
+	currentSkew = skew;
+	velocitySubscribers.forEach((set) => set(skew));
+}
+
+function onVelocity(set: (skew: number) => void) {
+	if (!velocitySubscribers.size) gsap.ticker.add(velocityTick);
+	velocitySubscribers.add(set);
+	return () => {
+		velocitySubscribers.delete(set);
+		if (velocitySubscribers.size) return;
+		gsap.ticker.remove(velocityTick);
+		currentSkew = 0;
+	};
+}
+
+/**
+ * Kinetic typography for headings and prominent text. Pick a preset from
+ * kineticPresets (motion/tokens.ts) or pass options:
+ *
+ *   <h2 {@attach kinetic('section')}>      or  <Heading kinetic="cta" …>
+ *   <p {@attach kinetic({ scroll: 'sweep', unit: 'words' })}>
+ *
+ * Scroll effects:
+ * - rise: lines rise out of a mask, once (two-tone lines rise in turn)
+ * - sweep: words go from faint to full opacity in reading order, scrubbed
+ * - tighten: characters scrub from a light weight to the text's own weight
+ * - velocity: skews with scroll speed, clamped, easing back to rest
+ * Pointer effects (fine pointer only; keyboard focus triggers hover too):
+ * - proximity: characters near the pointer swell in weight and lift
+ * - hover: the card's hover/focus lifts the characters in a quick stagger
+ *
+ * With reduced motion nothing is split and the text shows as is. Everything
+ * (SplitText, tweens, triggers, listeners, labels) reverts on destroy.
+ */
+export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLElement> {
+	return (node) => {
+		const options = resolveKinetic(effect);
+		if (!options) return;
+		let alive = true;
+
+		const cleanup = withMotion(
+			node,
+			(conditions, context) => {
+				const { motion, finePointer } = conditions as Conditions & { finePointer: boolean };
+				if (!motion) return;
+
+				const { scroll } = options;
+				const pointer = finePointer ? options.pointer : undefined;
+				const words = options.unit === 'words';
+				const rise = scroll.has('rise');
+				const needsUnit = scroll.has('sweep') || scroll.has('tighten') || !!pointer;
+				const unit = needsUnit ? (words ? 'words' : 'chars') : undefined;
+				const restWeight = Number(getComputedStyle(node).fontWeight) || 400;
+				const disposers: (() => void)[] = [];
+
+				if (scroll.has('velocity')) {
+					const skewTo = gsap.quickTo(node, 'skewY', { duration: duration.slow, ease: 'power3' });
+					disposers.push(onVelocity(skewTo));
+				}
+
+				let split: SplitText | null = null;
+				let risen = false;
+				// Scrubbed tweens belong to one split; killed before a re-split
+				let scrubbed: gsap.core.Tween[] = [];
+				const killScrubbed = () => {
+					scrubbed.forEach((tween) => {
+						tween.scrollTrigger?.kill();
+						tween.kill();
+					});
+					scrubbed = [];
+				};
+
+				const unclip = (self: SplitText) => gsap.set(self.masks, { overflow: 'visible' });
+
+				const create = () =>
+					context.add(() => {
+						split = kineticSplit(node, {
+							lines: rise || unit === 'chars',
+							mask: rise,
+							unit,
+							inlineWords: words && !pointer,
+							alive: () => alive,
+							onSplit(self, weighted) {
+								if (scroll.has('sweep')) {
+									const [start, end] = kineticRange.sweep;
+									scrubbed.push(
+										gsap.fromTo(
+											self.words,
+											{ opacity: k.sweepFrom },
+											{
+												opacity: 1,
+												ease: ease.linear,
+												stagger: stagger.base,
+												scrollTrigger: { trigger: node, start, end, scrub: k.scrub }
+											}
+										)
+									);
+								}
+								if (scroll.has('tighten') && weighted) {
+									const [start, end] = kineticRange.tighten;
+									scrubbed.push(
+										gsap.fromTo(
+											self.chars,
+											{ '--kw': k.weightLight },
+											{
+												'--kw': restWeight,
+												ease: ease.linear,
+												stagger: stagger.char,
+												scrollTrigger: { trigger: node, start, end, scrub: k.scrub }
+											}
+										)
+									);
+								}
+								if (!rise) return;
+								if (risen) {
+									unclip(self);
+									return;
+								}
+								// Returned so autoSplit carries its progress over a re-split
+								return gsap.from(self.lines, {
+									yPercent: distance.rise,
+									duration: duration.slower,
+									ease: ease.out,
+									stagger: stagger.base,
+									scrollTrigger: { trigger: node, start: revealStart, once: true },
+									onComplete: () => {
+										risen = true;
+										if (!alive) return;
+										// Rise only: back to plain text. Otherwise keep the split, unmasked.
+										if (unit) unclip(self);
+										else self.revert();
+									}
+								});
+							},
+							onRevert: killScrubbed
+						});
+					});
+
+				// Scroll effects split up front; pointer-only effects split on first use
+				if (rise || scroll.has('sweep') || scroll.has('tighten')) create();
+
+				return () => {
+					disposers.forEach((dispose) => dispose());
+					killScrubbed();
+					split?.revert();
+					split = null;
+				};
+			},
+			{ finePointer: FINE_POINTER }
+		);
+
+		return () => {
+			alive = false;
+			cleanup();
+		};
+	};
 }
