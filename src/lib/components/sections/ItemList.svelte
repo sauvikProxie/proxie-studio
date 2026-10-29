@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Item, ItemStyle } from '#lib/content/types.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 	import Icon from '../ui/Icon.svelte';
 
 	/** Renders a list of items in one of the shared presentations (see ItemStyle). */
@@ -17,7 +17,7 @@
 			<li class="card" class:is-link={!!item.href} data-reveal>
 				<span class="card-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
 				{#if item.title}
-					<h3 class="card-title">
+					<h3 class="card-title" {@attach !!item.href && kinetic('card')}>
 						{#if item.href && !item.linkLabel}
 							<a href={item.href} class="stretched">{item.title}</a>
 						{:else}

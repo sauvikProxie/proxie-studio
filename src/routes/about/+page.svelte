@@ -32,7 +32,7 @@
 <!-- Our story -->
 <section class="section">
 	<div class="container story" {@attach reveal({ children: '[data-reveal]' })}>
-		<div data-reveal>
+		<div>
 			<Heading text={about.story.heading} level={2} size="lg" />
 		</div>
 		<p class="story-text" data-reveal>{about.story.body}</p>
@@ -44,7 +44,7 @@
 	<div class="container">
 		<div class="vision on-ink" data-surface="ink">
 			<div class="vision-head" {@attach reveal({ children: '[data-reveal]' })}>
-				<div data-reveal>
+				<div>
 					<Heading text={about.visionMission.heading} level={2} size="xl" />
 				</div>
 				<p class="vision-text" data-reveal>
@@ -68,7 +68,7 @@
 <section class="section">
 	<div class="container people">
 		<div class="people-copy" {@attach reveal({ children: '[data-reveal]' })}>
-			<div data-reveal>
+			<div>
 				<Heading text={about.people.heading} level={2} size="xl" />
 			</div>
 			<p data-reveal>{about.people.body}</p>
@@ -112,7 +112,7 @@
 <!-- More about Proxie -->
 <section class="section">
 	<div class="container more">
-		<div {@attach reveal()}>
+		<div>
 			<Heading text={about.more.heading} level={2} size="lg" />
 		</div>
 		<ItemList

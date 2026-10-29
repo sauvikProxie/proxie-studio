@@ -79,8 +79,8 @@
 <section class="section testimonials" aria-labelledby="testimonials-heading">
 	<div class="container">
 		<div class="head" {@attach reveal({ children: '[data-reveal]' })}>
-			<div class="title" data-reveal>
-				{#if eyebrow}<span class="eyebrow">{eyebrow}</span>{/if}
+			<div class="title">
+				{#if eyebrow}<span class="eyebrow" data-reveal>{eyebrow}</span>{/if}
 				<Heading text={heading} level={2} size="xl" id="testimonials-heading" />
 			</div>
 			<div class="controls" data-reveal>

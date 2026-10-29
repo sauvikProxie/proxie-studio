@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { processSteps } from '#lib/content/blocks.ts';
-	import { reveal, stepSequence } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal, stepSequence } from '#lib/motion/attachments.ts';
 
 	/**
 	 * [REUSE: Process – How we work], full version.
@@ -23,7 +23,7 @@
 >
 	<div class="sticky">
 		<div class="panel">
-			<div class="big" aria-hidden="true">
+			<div class="big" aria-hidden="true" {@attach kinetic('numeral')}>
 				{#each processSteps as step, i (step.number)}
 					<span class="big-number" class:is-active={i === Math.max(active, 0)}>{step.number}</span>
 				{/each}

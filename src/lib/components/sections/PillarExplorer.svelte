@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { pillarArt } from '#lib/content/media.ts';
 	import { pillars } from '#lib/content/services.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 	import Art from '../art/Art.svelte';
 	import ArrowLink from '../ui/ArrowLink.svelte';
 	import Icon from '../ui/Icon.svelte';
@@ -29,7 +29,7 @@
 						onclick={() => (open = i)}
 					>
 						<span class="badge" aria-hidden="true"><Icon name={icons[i]} size={20} /></span>
-						<span class="name">{pillar.name}</span>
+						<span class="name" {@attach kinetic('card')}>{pillar.name}</span>
 						<span class="chev" aria-hidden="true"><Icon name="chevron" size={20} /></span>
 					</button>
 				</h3>

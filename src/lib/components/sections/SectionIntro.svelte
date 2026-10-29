@@ -29,8 +29,8 @@
 </script>
 
 <div class="intro intro--{layout}" {@attach reveal({ children: '[data-reveal]' })}>
-	<div class="heading" data-reveal>
-		{#if eyebrow}<span class="eyebrow">{eyebrow}</span>{/if}
+	<div class="heading">
+		{#if eyebrow}<span class="eyebrow" data-reveal>{eyebrow}</span>{/if}
 		<Heading text={heading} level={2} {size} {id} />
 	</div>
 	{#if body || action}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Testimonial } from '#lib/content/types.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 
 	/** A single testimonial quote with attribution. */
 	let {
@@ -13,7 +13,7 @@
 <figure class="quote quote--{size} quote--{tone}" {@attach reveal({ children: '[data-reveal]' })}>
 	<span class="mark" aria-hidden="true" data-reveal>“</span>
 	<blockquote data-reveal>
-		<p>{testimonial.quote}</p>
+		<p {@attach size === 'lg' && kinetic('statement')}>{testimonial.quote}</p>
 	</blockquote>
 	<figcaption data-reveal>
 		{#if testimonial.photo}

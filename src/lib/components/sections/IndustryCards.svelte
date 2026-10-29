@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { industries } from '#lib/content/industries.ts';
 	import { industryPhotos } from '#lib/content/media.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 	import Icon from '../ui/Icon.svelte';
 
 	/** The four industries as photo cards with name, summary and arrow. */
@@ -23,7 +23,7 @@
 			</div>
 			<div class="body">
 				<div class="text">
-					<svelte:element this={`h${headingLevel}`} class="name">
+					<svelte:element this={`h${headingLevel}`} class="name" {@attach kinetic('card')}>
 						<a href={industry.href} class="stretched">{industry.name}</a>
 					</svelte:element>
 					<p class="summary">{industry.summary}</p>

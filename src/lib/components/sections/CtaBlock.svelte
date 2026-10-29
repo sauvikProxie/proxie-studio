@@ -29,8 +29,8 @@
 				<PMark draw={drawPaths({ duration: 2.4 })} fill={false} />
 			</div>
 			<div class="content" {@attach reveal({ children: '[data-reveal]' })}>
-				<div data-reveal>
-					<Heading text={heading} level={2} size="2xl" />
+				<div>
+					<Heading text={heading} level={2} size="2xl" kinetic="cta" />
 				</div>
 				{#if body}<p class="body" data-reveal>{body}</p>{/if}
 				{#if extra}<div class="extra" data-reveal>{@render extra()}</div>{/if}

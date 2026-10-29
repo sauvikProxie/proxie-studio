@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Stat } from '#lib/content/types.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 
 	/** Compact stat blocks ([REUSE: Stats – About facts]). */
 	let { stats }: { stats: readonly Stat[] } = $props();
@@ -10,7 +10,7 @@
 	{#each stats as stat (stat.label)}
 		<div class="stat" data-reveal>
 			<dt>
-				<span class="value" class:value--word={stat.value.length > 3}>{stat.value}</span>
+				<span class="value" class:value--word={stat.value.length > 3} {@attach kinetic('numeral')}>{stat.value}</span>
 				<span class="label">{stat.label}</span>
 			</dt>
 			<dd>{stat.text}</dd>

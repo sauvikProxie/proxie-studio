@@ -25,7 +25,7 @@
 				<div class="content">
 					<div class="intro" {@attach reveal({ children: '[data-reveal]' })}>
 						<span class="eyebrow" data-reveal>Our Products</span>
-						<div data-reveal>
+						<div>
 							<Heading text={product.name} level={2} size="xl" id="{product.id}-heading" />
 						</div>
 						<p class="body" data-reveal>{product.body}</p>

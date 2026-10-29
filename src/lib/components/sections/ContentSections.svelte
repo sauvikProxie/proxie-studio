@@ -19,7 +19,7 @@
 	<section class="section content" id={section.id}>
 		<div class="container">
 			<div class="grid" class:stacked>
-				<div class="head" {@attach reveal()}>
+				<div class="head">
 					{#if section.heading}
 						<Heading text={section.heading} level={2} size="lg" />
 					{/if}

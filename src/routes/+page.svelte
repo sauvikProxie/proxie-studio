@@ -18,7 +18,7 @@
 	import { home } from '#lib/content/home.ts';
 	import { productArt } from '#lib/content/media.ts';
 	import { site } from '#lib/content/site.ts';
-	import { drawPaths, launchGraph, reveal } from '#lib/motion/attachments.ts';
+	import { drawPaths, kinetic, launchGraph, reveal } from '#lib/motion/attachments.ts';
 
 	const whoIcons = ['layers', 'shield'] as const;
 	const productIds = ['blind-companion', 'session-pilot'];
@@ -34,7 +34,7 @@
 		<div class="bento frame" {@attach reveal({ children: '[data-reveal]', stagger: 0.08 })}>
 			<article class="cell cell--intro" data-reveal>
 				<h2 id="who-heading" class="eyebrow">{home.whoWeAre.heading}</h2>
-				<p class="statement">{home.whoWeAre.body}</p>
+				<p class="statement" {@attach kinetic('statement')}>{home.whoWeAre.body}</p>
 			</article>
 
 			<article class="cell cell--ink on-ink" data-reveal>
@@ -70,7 +70,7 @@
 	<div class="container founders-grid">
 		<div class="founders-copy" {@attach reveal({ children: '[data-reveal]' })}>
 			<span class="eyebrow" data-reveal>About Proxie Studio</span>
-			<div data-reveal>
+			<div>
 				<Heading text={home.founders.heading} level={2} size="xl" />
 			</div>
 			<p class="body" data-reveal>{home.founders.body}</p>
@@ -146,7 +146,7 @@
 					</div>
 					<div class="product-body">
 						<div>
-							<h3 class="product-name">
+							<h3 class="product-name" {@attach kinetic('card')}>
 								<a href={product.href} class="stretched">{product.title}</a>
 							</h3>
 							<p class="product-text">{product.text}</p>

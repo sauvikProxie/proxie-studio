@@ -134,7 +134,10 @@
 		padding-bottom: clamp(3rem, 2rem + 4vw, 5rem);
 	}
 
+	/* A definite width (not shrink-to-fit): split lines would otherwise shrink
+	   the centred title to its widest line and move it while it animates. */
 	.copy :global(.title) {
+		width: 100%;
 		max-width: 13ch;
 	}
 

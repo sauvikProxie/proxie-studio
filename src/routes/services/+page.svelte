@@ -23,7 +23,7 @@
 			<div class="pillar-grid">
 				<div class="pillar-head" {@attach reveal({ children: '[data-reveal]' })}>
 					<span class="index" aria-hidden="true" data-reveal>{String(i + 1).padStart(2, '0')}</span>
-					<div data-reveal>
+					<div>
 						<Heading text={pillar.name} level={2} size="xl" id="pillar-{pillar.slug}" />
 					</div>
 					<p class="body" data-reveal>{pillar.overviewBody}</p>

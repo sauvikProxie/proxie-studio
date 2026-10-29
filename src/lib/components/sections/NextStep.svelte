@@ -2,7 +2,7 @@
 	import { contactLink } from '#lib/content/blocks.ts';
 	import { findByHref } from '#lib/content/services.ts';
 	import type { Closing, Link } from '#lib/content/types.ts';
-	import { reveal } from '#lib/motion/attachments.ts';
+	import { kinetic, reveal } from '#lib/motion/attachments.ts';
 	import ArrowLink from '../ui/ArrowLink.svelte';
 	import Icon from '../ui/Icon.svelte';
 	import CtaBlock from './CtaBlock.svelte';
@@ -30,7 +30,7 @@
 					<li data-reveal>
 						<a href={item.href} class="related-card">
 							{#if item.parent}<span class="parent">{item.parent}</span>{/if}
-							<span class="name">{item.name}</span>
+							<span class="name" {@attach kinetic('card')}>{item.name}</span>
 							<span class="summary">{item.summary}</span>
 							<span class="arrow" aria-hidden="true"><Icon name="arrow" size={20} /></span>
 						</a>
