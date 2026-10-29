@@ -1,0 +1,142 @@
+/*
+ * Proxie Studio design tokens
+ * ---------------------------------------------------------------
+ * The single source for colour, type, spacing, radius, shadow and
+ * motion. Components use these variables only; never raw values.
+ * Motion values are mirrored for GSAP in src/lib/motion/tokens.ts.
+ */
+
+:root {
+	/* ---------- Colour ----------
+	 * Neutral base: cool light grey canvas with white cards.
+	 * Ink: green-black. Accent: emerald (text/buttons) with a lime and
+	 * bright-green glow family used decoratively (gradients, dots, light).
+	 * Contrast (WCAG): ink/paper 17:1, ink-muted/paper 7.2:1,
+	 * accent/paper 4.9:1, white on accent 5.4:1, ink on lime 14.9:1,
+	 * lime on ink 14.9:1, on-ink-muted/ink 8.8:1.
+	 */
+	--color-paper: #f2f3f0;
+	--color-paper-sunken: #e7e9e4;
+	--color-surface: #ffffff;
+	--color-surface-2: #f8f9f7;
+	--color-ink: #0a0f0c;
+	--color-ink-2: #141b17;
+	--color-ink-muted: #4a524d;
+	--color-ink-subtle: #5f6862;
+
+	--color-accent: #0b7a45;
+	--color-accent-strong: #075c33;
+	--color-accent-bright: #1fc46a;
+	--color-accent-soft: #ddf2e4;
+	--color-lime: #b9f45e;
+	--color-mint: #7fe8a8;
+	--color-accent-on-ink: #b9f45e;
+
+	--color-on-ink: #f2f3f0;
+	--color-on-ink-muted: #a9b1ac;
+	--color-line: rgb(10 15 12 / 0.09);
+	--color-line-strong: rgb(10 15 12 / 0.2);
+	--color-line-on-ink: rgb(242 243 240 / 0.12);
+	--color-chart-muted: #8a928d;
+	--color-focus: #0b7a45;
+	--color-error: #a3261b;
+
+	/* Decorative light: glows, gradients and dot textures */
+	--glow-green: radial-gradient(closest-side, rgb(31 196 106 / 0.55), rgb(31 196 106 / 0));
+	--glow-lime: radial-gradient(closest-side, rgb(185 244 94 / 0.6), rgb(185 244 94 / 0));
+	--gradient-accent: linear-gradient(120deg, #0b7a45 0%, #1fc46a 55%, #b9f45e 100%);
+	--dither: radial-gradient(circle at center, var(--dither-color, rgb(31 196 106 / 0.75)) 0.9px, transparent 1.4px);
+	--dither-size: 7px 7px;
+
+	/* ---------- Typography ---------- */
+	--font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', ui-sans-serif, system-ui,
+		sans-serif;
+	--font-text: 'Instrument Sans Variable', 'Instrument Sans', ui-sans-serif, system-ui, -apple-system,
+		'Segoe UI', sans-serif;
+
+	/* Fluid type scale (375px → 1440px) */
+	--text-xs: 0.8125rem;
+	--text-sm: 0.875rem;
+	--text-base: 1.0625rem;
+	--text-md: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+	--text-lg: clamp(1.1875rem, 1.08rem + 0.45vw, 1.4375rem);
+	--text-xl: clamp(1.375rem, 1.2rem + 0.75vw, 1.875rem);
+	--text-2xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+	--text-3xl: clamp(2.125rem, 1.55rem + 2.45vw, 3.875rem);
+	--text-4xl: clamp(2.5rem, 1.6rem + 3.9vw, 5.25rem);
+	--text-5xl: clamp(2.75rem, 1.4rem + 5.8vw, 7rem);
+
+	--leading-tight: 1.02;
+	--leading-snug: 1.15;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.65;
+	--tracking-tight: -0.04em;
+	--tracking-snug: -0.02em;
+	--tracking-wide: 0.08em;
+	--measure: 62ch;
+
+	/* ---------- Spacing (4px base) ---------- */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.25rem;
+	--space-6: 1.5rem;
+	--space-8: 2rem;
+	--space-10: 2.5rem;
+	--space-12: 3rem;
+	--space-16: 4rem;
+	--space-20: 5rem;
+	--space-24: 6rem;
+	--space-32: 8rem;
+
+	--section-gap: clamp(4.5rem, 3rem + 6vw, 9rem);
+	--gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+	--container: 84rem;
+	--container-narrow: 48rem;
+	--header-h: 4.75rem;
+
+	/* ---------- Radius ---------- */
+	--radius-xs: 0.375rem;
+	--radius-sm: 0.75rem;
+	--radius-md: 1.125rem;
+	--radius-lg: 1.5rem;
+	--radius-xl: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+	--radius-2xl: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+	--radius-pill: 999px;
+
+	/* ---------- Shadow ---------- */
+	--shadow-sm: 0 1px 2px rgb(10 15 12 / 0.05), 0 2px 6px -2px rgb(10 15 12 / 0.05);
+	--shadow-md: 0 2px 4px rgb(10 15 12 / 0.03), 0 14px 32px -10px rgb(10 15 12 / 0.14);
+	--shadow-lg: 0 4px 10px rgb(10 15 12 / 0.04), 0 36px 72px -20px rgb(10 15 12 / 0.24);
+	--shadow-glow: 0 18px 48px -14px rgb(31 196 106 / 0.55);
+	--ring: inset 0 0 0 1px var(--color-line);
+
+	/* ---------- Motion ----------
+	 * Mirrored in src/lib/motion/tokens.ts for GSAP.
+	 */
+	--dur-instant: 120ms;
+	--dur-fast: 220ms;
+	--dur-base: 450ms;
+	--dur-slow: 800ms;
+	--dur-slower: 1200ms;
+	--dur-marquee: 38s;
+	--dur-float: 7s;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+
+	/* ---------- Layers ---------- */
+	--z-header: 50;
+	--z-menu: 60;
+	--z-skip: 100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--dur-fast: 0ms;
+		--dur-base: 0ms;
+		--dur-slow: 0ms;
+		--dur-slower: 0ms;
+	}
+}

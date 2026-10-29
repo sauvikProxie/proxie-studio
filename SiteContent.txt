@@ -1,0 +1,1778 @@
+=====================================================================
+SITE CONTENT – ProxieStudio
+Generated: 2026-10-29 | Revised: 2026-10-29 (content only; no design guidance)
+=====================================================================
+
+
+0. HOW TO USE THIS FILE
+---------------------------------------------------------------------
+This is the only content source for the new Proxie Studio website. It contains text content only: it deliberately says nothing about layout, colours, typography, components or animation. Those decisions are yours.
+
+Section 1 gives company facts and brand voice. Section 2 defines the navigation. Section 3 maps every old route to its new home (use it for redirects). Section 4 has one block per page in a fixed template (PAGE / SUGGESTED ROUTE / PARENT / PURPOSE / SEO TITLE / META DESCRIPTION / HERO / SECTIONS / CTA). Section 5 lists reusable content blocks once; pages refer to them as "[REUSE: <name>]". Section 6 maps the image files in the /images folder to the content they belong to.
+
+Conventions: lines starting "NOTE:" are instructions about the content, not site copy. Everything else is final, publishable copy. Use British English spelling. Use "&" in names (nav, page titles, service names) and "and" in body copy. Service names are written exactly as in Section 2 everywhere. Never add facts, numbers, names, clients or claims that are not in this file. Legal pages are reproduced near-verbatim on purpose: do not rewrite their meaning.
+
+
+=====================================================================
+1. COMPANY OVERVIEW
+=====================================================================
+
+NAME
+  Display name: Proxie Studio (short form in copy: "Proxie")
+  Logo wordmark: "ProxieStudio" (one word; supplied as images/logo/logo.svg)
+  Legal entity (India): Proxie Studio Pvt. Ltd. (from the Session Pilot privacy policy)
+  Website: https://proxiestudio.com
+  NOTE: In visible copy, write "Proxie Studio" (two words). Use "ProxieStudio" only inside the logo.
+
+POSITIONING STATEMENT (one line)
+  A technology partner that turns ideas into working products, with data, AI and software built around your business.
+
+SHORT DESCRIPTION
+  Proxie Studio is a technology partner for organisations that want to do more with data, software and AI. Its teams in Umeå, Sweden and Ludhiana, India combine Scandinavian design thinking with deep engineering capacity. Proxie works across four areas: Data & Analytics, AI & Automation, Business Applications and Digital Experience. Every solution is tailored to the client's goals and delivered end to end, from the first workshop to long-term support. Proxie also describes itself as a private research lab, and it builds and publishes its own AI-powered apps (Blind Companion and Session Pilot).
+
+VISION (live /about-us page)
+  To lead with innovation, empower through technology and inspire trust through excellence. We envision a world where businesses achieve more with cutting-edge solutions and human-centric design.
+  Tagline used with it: "Empowering innovation: turning your vision into exceptional software solutions."
+
+MISSION (live /about-us page)
+  - Deliver high-quality products and services that address real-world challenges.
+  - Build lasting relationships through trust, transparency and accountability.
+  - Empower individuals and organisations to grow and thrive in a fast-evolving digital landscape.
+
+VALUES ("What we stand for")
+  - Built around you: we start with your goals, not a ready-made package.
+  - Pragmatic innovation: AI and new technology where they create real value, simplicity where they don't.
+  - Open and transparent: clear communication, honest estimates, no surprises.
+  - Quality that lasts: secure, well-tested, maintainable solutions.
+
+KEY FACTS & NUMBERS (all from source; nothing else may be claimed)
+  - Founded and led by Abhishek Malhotra and Aman Malhotra (co-founders)
+  - 2 offices: Umeå (Sweden) and Ludhiana (India)
+  - 4 service areas (pillars, see Section 2)
+  - End-to-end delivery: from first workshop to long-term support
+  - 1 team working side by side across borders
+  - "2 weeks": launch and onboard beta users with Proxie Studio (from the home-page launch-timeline graphic)
+  - Industries served: Retail, Energy, Manufacturing, Public Sector
+  - Trusted by (logos): Vans, McLaren, Mercedes-Benz, Daimler, Bufferleaf
+  - Testimonials from: Mercedes-Benz India, Volvo Cars, Vans Singapore, Daimler India
+  - Own products: Blind Companion (iOS & Android), Session Pilot (mobile)
+  - "Proven success in large-scale IoT projects" (claim from the IoT page)
+  NOTE: There is no founding year, headcount, project count, certification or partner badge. Do not add any.
+
+LOCATIONS
+  Sweden: Tvistevägen 48, 907 36 Umeå, Sweden
+  India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
+
+CONTACT DETAILS
+  Email: enquiries@weareproxie.com (from the Terms & Conditions and both app privacy policies)
+  Phone: none. Do not show a phone number.
+  Contact form: see PAGE: Contact
+
+SOCIAL LINKS
+  LinkedIn, Instagram, Facebook. Show all three. Each links to "#" for now (profile URLs will be added later).
+
+BRAND VOICE NOTES
+  Observed tone: confident, optimistic, benefit-led, business-focused rather than technical. Short declarative headlines, often a contrast or a pair ("From Insight to Intelligence", "Where Design Meets Function", "Tools with Purpose", "Precision in Every Line"). Body copy speaks directly to the reader ("you", "your business") and keeps "we" for Proxie.
+  Recurring themes:
+    - Tailored, never generic ("built around you", "no generic fixes")
+    - Speed from idea to impact ("fast and focused", "2 weeks to beta users")
+    - Data-driven decisions; AI used pragmatically
+    - End to end: strategy → design → build → support
+    - Human + technology ("Technology with a human touch")
+    - Sweden + India: close collaboration and Scandinavian design, backed by engineering capacity
+  Key messages:
+    1. Your ideas + our team: we make them real, fast.
+    2. One partner for data, AI, business applications and digital experience.
+    3. Tailored solutions that fit how you actually work and keep delivering after launch.
+  Style guidance for new copy: avoid stacking buzzwords. The old site overused "seamless", "leverage", "empower", "cutting-edge" and "unlock"; use each at most once per page. Prefer concrete verbs (connect, automate, forecast, build).
+
+
+=====================================================================
+2. NAVIGATION
+=====================================================================
+
+HEADER NAV (left to right)
+  [Logo] → /
+
+  Services ▾ → /services (each pillar title links to its pillar page)
+    Data & Analytics → /services/data-analytics
+      - Data Strategy → /services/data-analytics/data-strategy
+      - Data Platforms → /services/data-analytics/data-platforms
+      - Business Intelligence & Analytics → /services/data-analytics/business-intelligence
+      - Corporate Performance Management → /services/data-analytics/corporate-performance-management
+    AI & Automation → /services/ai-automation
+      - Artificial Intelligence → /services/ai-automation/artificial-intelligence
+      - IoT Solutions → /services/ai-automation/iot
+      - Process Automation & RPA → /services/ai-automation/process-automation
+      - Integration Platforms → /services/ai-automation/integration-platforms
+    Business Applications → /services/business-applications
+      - CRM: Sales, Marketing & Customer Service → /services/business-applications/crm
+      - ERP → /services/business-applications/erp
+      - Low-Code Development → /services/business-applications/low-code
+      - Digital Signing & Authentication → /services/business-applications/digital-signing
+    Digital Experience → /services/digital-experience
+      - Branding → /services/digital-experience/branding
+      - UX & Design → /services/digital-experience/ux-design
+      - Websites & Web Applications → /services/digital-experience/websites
+      - E-Commerce & PIM → /services/digital-experience/e-commerce
+      - Smart Intranets → /services/digital-experience/intranets
+      - Mobile Apps → /services/digital-experience/mobile-apps
+    Menu footer link: "All services →" /services
+
+  Industries ▾ → /industries
+    - Retail → /industries/retail
+    - Energy → /industries/energy
+    - Manufacturing → /industries/manufacturing
+    - Public Sector → /industries/public-sector
+
+  About ▾ → /about
+    - About Proxie Studio → /about
+    - Our Products → /about/products
+    - Sustainability → /about/sustainability
+
+  Careers → /careers
+
+  [Button] Contact Us → /contact
+
+  NOTE: There are no case studies in the source, so do NOT add a Work/Cases nav item.
+  NOTE: The mobile menu has the same structure and contents.
+
+FOOTER NAV
+  Column "Services": Data & Analytics, AI & Automation, Business Applications, Digital Experience (pillar pages)
+  Column "Industries": Retail, Energy, Manufacturing, Public Sector
+  Column "Company": About, Our Products, Sustainability, Careers, Contact
+  Column "Offices": Sweden: Tvistevägen 48, 907 36 Umeå, Sweden | India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India | enquiries@weareproxie.com
+  Social: LinkedIn, Instagram, Facebook (each links to "#" for now)
+  Legal row: Privacy Policy (/privacy-policy) · Terms & Conditions (/terms) · Blind Companion Privacy Policy (/blind-companion-privacy-policy) · Session Pilot Privacy Policy (/spprivacypolicy)
+  Copyright: "© <current year> Proxie Studio. All rights reserved."
+  NOTE: Always render the current year.
+
+PRIMARY CTAs
+  - Header button: "Contact Us" → /contact
+  - Home hero button: "Contact Us" → /contact (old label "Contact US"; capitalisation fixed)
+  - Closing CTA block (Section 5, "CTA: Let's build what's next"): button "Contact Us" → /contact
+  - Careers: "Apply" → external application form (see PAGE: Careers)
+  - Contact form submit: "Send message"
+  - Secondary links on pillar and industry pages: "Explore <service name> →", "See all services →"
+
+
+=====================================================================
+3. OLD → NEW MAPPING
+=====================================================================
+Format: OLD item | old route | → NEW location | note
+Recommend 301 redirects from every old route that has a new location.
+
+HEADER – logo & top level
+  Logo | / | → / | unchanged
+  "Services & Solutions" (menu trigger) | (no route) | → "Services" menu + /services | renamed; new overview page
+  "Industries" (menu trigger) | (no route) | → "Industries" menu + /industries | new overview page
+  "About us" | /about-us (repo) ; live site pointed to /careers | → /about | live link was broken (pointed to Careers)
+  "Careers" | /careers | → /careers | unchanged
+  "Contact Us" (pill) | /contact-us | → /contact | 301 /contact-us → /contact
+
+SERVICES & SOLUTIONS → Data & AI (group split into two pillars)
+  "Data & AI" (group title) | /data-ai | → /services/data-analytics (data services) and /services/ai-automation (AI services) | landing page copy reused across both pillars; redirect /data-ai → /services
+  "Data strategy" | /data-ai/datastrategi | → Data Strategy, /services/data-analytics/data-strategy | Swedish slug replaced
+  "Business Intellengence & analytics" | /data-ai/bi-analytics | → Business Intelligence & Analytics, /services/data-analytics/business-intelligence | spelling fixed
+  "Agile team deliveries" | /data-ai/agila-team-deliveries | → merged into /about, section "How we work" (delivery model) | a way of working, not a data service
+  "Data Platforms" | /data-ai/dataplatformar | → Data Platforms, /services/data-analytics/data-platforms | Swedish slug replaced
+  "Corporate performance management" | /data-ai/corporate-performance-management | → Corporate Performance Management, /services/data-analytics/corporate-performance-management |
+  "Process development & automation" | /data-ai/process-development-rpa | → Process Automation & RPA, /services/ai-automation/process-automation | grouped with the other automation offers
+  "AI" | /data-ai/ai | → Artificial Intelligence, /services/ai-automation/artificial-intelligence |
+  "IoT" | /data-ai/iot | → IoT Solutions, /services/ai-automation/iot |
+
+SERVICES & SOLUTIONS → Software engineering (removed)
+  "Software engineering" (group title) | /software-engineering | → removed: placeholder | Landing page only had a tagline plus 3 cards whose text was copied from Data & AI cards (one truncated). The tagline "Precision in every line" is reused on /services. Redirect → /services
+  "Digital Transformation" | / (placeholder) | → removed: placeholder link with no page or content
+  "Software Development" | / (placeholder) | → removed: placeholder link with no page or content
+  "Cloud Services" | / (placeholder) | → removed: placeholder link with no page or content
+  "Application Services" | / (placeholder) | → removed: placeholder link with no page or content
+  "Consulting & Sourcing" | / (placeholder) | → removed: placeholder link with no page or content
+  "Security" | / (placeholder) | → removed: placeholder link with no page or content
+  "IT Strategy" | / (placeholder) | → removed: placeholder link with no page or content
+  Software engineering landing cards "Custom Cloud Solutions", "Expert Consulting", "Future-Ready Innovation" | /software-engineering | → removed: filler (body text duplicated from Data & AI cards and unrelated to the card titles)
+
+SERVICES & SOLUTIONS → Digital Experience
+  "Digital Experience" (group title) | /digital-experience | → /services/digital-experience |
+  "Branding" | /digital-experience/branding | → Branding, /services/digital-experience/branding |
+  "Design & UX" | /digital-experience/design-ux | → UX & Design, /services/digital-experience/ux-design | page title was "UX and Design" while the menu said "Design & UX"; unified
+  "Websites" | /digital-experience/websites | → Websites & Web Applications, /services/digital-experience/websites | also the old footer link "Websites"
+  "E-Commerce & PIM" | /digital-experience/e-commerce | → E-Commerce & PIM, /services/digital-experience/e-commerce |
+  "Smart intranets" | /digital-experience/intranets | → Smart Intranets, /services/digital-experience/intranets |
+  "Apps" | /digital-experience/application | → Mobile Apps, /services/digital-experience/mobile-apps | renamed for clarity
+
+SERVICES & SOLUTIONS → Business Applications
+  "Business Applications" (group title) | /business-applications | → /services/business-applications |
+  "Sales & Marketing" | /business-applications/sales-marketing | → CRM: Sales, Marketing & Customer Service, /services/business-applications/crm | merged
+  "Customer Service" | /business-applications/sales-marketing (same page) | → merged into CRM: Sales, Marketing & Customer Service | had no page of its own
+  "Low code" | /business-applications/low-code | → Low-Code Development, /services/business-applications/low-code |
+  "ERP" | /business-applications/erp | → ERP, /services/business-applications/erp |
+  "Digital Signing & Authentication" | /business-applications/digital-signing-authentication | → Digital Signing & Authentication, /services/business-applications/digital-signing |
+  "Integration Platform" | /business-applications/integration-platforms | → Integration Platforms, /services/ai-automation/integration-platforms | moved next to Process Automation (both connect systems and automate work)
+
+INDUSTRIES
+  "Retail" | /retail | → /industries/retail |
+  "Electricity & Energy" | /energy | → Energy, /industries/energy | menu label and page title unified
+  "Manufacturing industry" | /manufacturing-industry | → Manufacturing, /industries/manufacturing |
+  "Public Sector" | /public-sector | → /industries/public-sector |
+  "Durability" | /durability | → Sustainability, /about/sustainability | Mistranslation of Swedish "hållbarhet" (sustainability). The page is about Proxie's own commitments, not an industry, so it moves under About.
+
+OTHER PAGES
+  Home | / | → / | content restructured (see PAGE: Home)
+  About us (repo version) | /about-us | → /about |
+  About us (live, unlinked) | /about-us on proxiestudio.com | → vision and mission merged into /about | only vision, tagline and mission were there (the mission block repeated 3 times)
+  Careers (live) | /careers | → /careers |
+  Contact (live) | /contact-us | → /contact |
+  404 (live, Framer default) | any unknown URL | → 404 page |
+
+FOOTER (old)
+  "Services" → Data & AI | /data-ai | → footer "Services" column: Data & Analytics + AI & Automation
+  "Services" → Business Applications | /business-applications | → footer "Services" column: Business Applications
+  "Services" → Websites | /digital-experience/websites | → footer "Services" column: Digital Experience (pillar replaces the single service)
+  "Follow Us" → LinkedIn / Instagram / Facebook | (no links) | → footer social links | links "#" for now
+  "Address" → Sweden / India | — | → footer "Offices" column
+  "Privacy & Policy" | /privacy-policy | → Privacy Policy, /privacy-policy | label fixed
+  "Blind Nav Privacy & Policy" | /blind-companion-privacy-policy | → Blind Companion Privacy Policy, /blind-companion-privacy-policy | The app is called "Blind Companion" in the policy itself. KEEP THIS URL (likely referenced in App Store / Google Play listings).
+  "Session Pilot Privacy & Policy" | /spprivacypolicy | → Session Pilot Privacy Policy, /spprivacypolicy | KEEP THIS URL (likely referenced in the app store listing)
+  "Terms & Conditions" | /terms-&-conditions | → /terms | 301 old URL ("&" in a URL is fragile)
+  "Copyright © 2024 Proxie Studio. All rights reserved" | — | → footer copyright with the current year |
+
+HOME-PAGE SECTIONS (old → new)
+  Hero "Your Ideas + Our Team-Making It Reality" | / | → Home hero (cleaned)
+  "Trusted By" logo row | / and /about-us | → [REUSE: Client logos]
+  "Who Are We?" + "Customized Digital Solutions" | / | → Home "Who we are" (merged into one section)
+  "Accelerate from Concept to Impactful Solutions -Fast and Focused" + graph + Mercedes-Benz India quote | / | → Home "From idea to impact"
+  Testimonial cards (3) | / | → [REUSE: Testimonials]
+  "Driving Industry Standards" | / | → Home "Who we are" key point (one sentence); the standalone section was removed as filler
+
+SERVICE LANDING-PAGE CARDS (old → new)
+  Data & AI cards "Data Management" (×2, duplicated), "Goal Management", "Business Intelligence" (×5, duplicated and truncated) | /data-ai | → removed: filler/duplicates. The pillar pages list the real services instead.
+  Digital Experience cards "Digital experience", "Surpass your clients anticipations" | /digital-experience | → condensed into the Digital Experience pillar intro
+  Business Applications cards "Tailored Business Solutions", "Drive Growth & Engagement", "Scalable Development" | /business-applications | → condensed into the Business Applications pillar intro and service cards
+
+
+=====================================================================
+4. PAGES
+=====================================================================
+
+Page order: Home · Services overview · 4 pillar pages, each followed by its service pages · Industries overview + 4 industries · About · Our Products · Sustainability · Careers · Contact · Legal (4) · 404
+
+
+---------------------------------------------------------------
+PAGE: Home
+SUGGESTED ROUTE: /
+PARENT: top level
+PURPOSE: Introduce Proxie Studio, show credibility, and route visitors to services, industries or contact.
+SEO TITLE: Proxie Studio – Data, AI & Software That Delivers
+META DESCRIPTION: Proxie Studio is a technology partner for custom software, AI and digital solutions. Tailored, fast and built to last – from idea to impact.
+
+HERO
+  Headline: Your ideas + our team: making it reality
+  Subheadline: We are a private research lab building innovative products and software for the world.
+  CTA: Contact Us → /contact
+
+SECTIONS
+  [Trusted by]
+    Heading: Trusted by
+    Body: —
+    Items: [REUSE: Client logos]
+
+  [Who we are]
+    Heading: Who are we?
+    Body: Proxie is a technology partner that helps organisations thrive in a digital-first world. From software and app development to AI and the web, we build tailored solutions that drive real transformation.
+    Items:
+      - Customised digital solutions: software and AI shaped around each organisation's unique needs.
+      - Higher standards: we hold ourselves to high standards of quality, performance and reliability in everything we build.
+
+  [What we do]
+    Heading: One partner, four areas of expertise
+    Body: From strategy to long-term support, we cover the full journey.
+    Items: (each links to its pillar page)
+      - Data & Analytics: Turn scattered data into clear insight and better decisions. → /services/data-analytics
+      - AI & Automation: Put AI, IoT and automation to work on your processes. → /services/ai-automation
+      - Business Applications: CRM, ERP and low-code tools that run your business. → /services/business-applications
+      - Digital Experience: Brands, websites, apps and intranets people enjoy using. → /services/digital-experience
+
+  [Founders]
+    Heading: Meet the founders
+    Body: Proxie is led by people who have spent their careers building and teaching technology, and who still enjoy rolling up their sleeves.
+    Items: [REUSE: Founders]
+    Link: More about us → /about
+
+  [From idea to impact]
+    Heading: From concept to impact: fast and focused
+    Body: Proxie Studio turns your ideas into market-ready solutions with speed and precision.
+    Items:
+      - Stat/graphic: [REUSE: Stat – 2 weeks to beta users]
+      - Quote: [REUSE: Testimonial – Rajesh Mehra, Mercedes-Benz India]
+
+  [Industries]
+    Heading: Industries we know
+    Body: We bring sector knowledge to every project.
+    Items: Retail · Energy · Manufacturing · Public Sector (each links to its industry page)
+
+  [Our products]
+    Heading: We build our own products, too
+    Body: As a research lab, we design, build and run our own AI-powered apps.
+    Items:
+      - Blind Companion: an AI-powered visual assistant that helps people understand their surroundings. → /about/products
+      - Session Pilot: turns spoken meetings into transcripts and AI-generated notes, linked to your calendar. → /about/products
+
+  [Testimonials]
+    Heading: What our clients say
+    Body: —
+    Items: [REUSE: Testimonials] (Erik Jakobsson, Michelle Mccoy, Kayla Ray)
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+PAGE: Services
+SUGGESTED ROUTE: /services
+PARENT: top level
+PURPOSE: Overview of all four service pillars and their services, so visitors can find the right offer quickly.
+SEO TITLE: Services | Proxie Studio
+META DESCRIPTION: Data & analytics, AI & automation, business applications and digital experience: tailored solutions from strategy to long-term support.
+
+HERO
+  Headline: Precision in every line
+  Subheadline: We design and build scalable software, data and AI solutions that solve complex problems and grow with your business.
+  CTA: Talk to us → /contact
+
+SECTIONS
+  [Data & Analytics]
+    Heading: Data & Analytics
+    Body: From insight to intelligence. Get your data in order and put it to work.
+    Items:
+      - Data Strategy
+      - Data Platforms
+      - Business Intelligence & Analytics
+      - Corporate Performance Management
+    Link: Explore Data & Analytics → /services/data-analytics
+
+  [AI & Automation]
+    Heading: AI & Automation
+    Body: AI, IoT and automation that take manual work out of your processes.
+    Items:
+      - Artificial Intelligence
+      - IoT Solutions
+      - Process Automation & RPA
+      - Integration Platforms
+    Link: Explore AI & Automation → /services/ai-automation
+
+  [Business Applications]
+    Heading: Business Applications
+    Body: Tools with purpose. Tailored applications that run your operations.
+    Items:
+      - CRM: Sales, Marketing & Customer Service
+      - ERP
+      - Low-Code Development
+      - Digital Signing & Authentication
+    Link: Explore Business Applications → /services/business-applications
+
+  [Digital Experience]
+    Heading: Digital Experience
+    Body: Where design meets function. Digital products people enjoy using.
+    Items:
+      - Branding
+      - UX & Design
+      - Websites & Web Applications
+      - E-Commerce & PIM
+      - Smart Intranets
+      - Mobile Apps
+    Link: Explore Digital Experience → /services/digital-experience
+
+  [How we work]
+    Heading: How we work
+    Body: Discover, design, build, evolve: a clear process from idea to impact. Agile teams deliver in short cycles, so you see results early.
+    Items: [REUSE: Process – How we work] (short version: 4 step titles only) + link "More about how we work →" /about#how-we-work
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+
+=== PILLAR 1: DATA & ANALYTICS ===
+
+---------------------------------------------------------------
+PAGE: Data & Analytics
+SUGGESTED ROUTE: /services/data-analytics
+PARENT: Services
+PURPOSE: Pillar page for data strategy, platforms, BI and performance management.
+SEO TITLE: Data & Analytics Services | Proxie Studio
+META DESCRIPTION: Data strategy, data platforms, business intelligence and performance management that turn complex data into clear decisions.
+
+HERO
+  Headline: Data & Analytics
+  Subheadline: From insight to intelligence. We build data-driven systems that turn complexity into clarity, so every decision rests on facts.
+  CTA: Talk to a data expert → /contact
+
+SECTIONS
+  [Our areas of expertise]
+    Heading: Our areas of expertise
+    Body: —
+    Items: (each links to its service page)
+      - Data Strategy: A data strategy tailored to your vision, with expert guidance on the right tools and platforms.
+      - Data Platforms: Cloud or on-premises platforms that collect, integrate and store your data automatically.
+      - Business Intelligence & Analytics: Centralised, up-to-date data and clear visualisations that simplify decisions.
+      - Corporate Performance Management: Better data quality and collaboration for smoother planning, reporting and follow-up.
+
+  [What you get]
+    Heading: Data you can act on
+    Body: We connect, organise and optimise your data so teams get real-time insight, work more efficiently and make smarter decisions.
+    Items:
+      - Clear objectives and data-driven strategies
+      - One trusted, up-to-date view of the business
+      - Less manual data handling, more time for analysis
+
+CTA / CLOSING: Ready to put your data to work? → Contact Us (/contact). Cross-link: "Looking for AI? See AI & Automation →" /services/ai-automation
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Data Strategy
+SUGGESTED ROUTE: /services/data-analytics/data-strategy
+PARENT: Data & Analytics
+PURPOSE: Explain Proxie's data strategy service and how it supports a data-driven business.
+SEO TITLE: Data Strategy & Data-Driven Business | Proxie Studio
+META DESCRIPTION: A data strategy built around your vision, not a generic fix. Expert guidance on tools and platforms to become a truly data-driven business.
+
+HERO
+  Headline: Data strategy & data-driven business
+  Subheadline: Personalised strategies built around your business vision, with no generic fixes. We help you choose the right tools and adapt with confidence as things change.
+  CTA: Book a strategy conversation → /contact
+
+SECTIONS
+  [Data strategy]
+    Heading: A strategy that fits your vision
+    Body: Every strategy we write is aligned with your goals. Our technology guidance gives you expert advice on the tools and platforms that suit your business, and our approach helps you navigate change and turn challenges into opportunities.
+  [Data-driven business]
+    Heading: Becoming data-driven
+    Body: —
+    Items:
+      - Tailored data strategies: customised solutions aligned with your vision.
+      - Expert guidance: support for data-driven decision-making.
+      - Operational optimisation: a competitive edge through efficiency and growth.
+
+CTA / CLOSING: Related: Data Platforms · Business Intelligence & Analytics. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Data Platforms
+SUGGESTED ROUTE: /services/data-analytics/data-platforms
+PARENT: Data & Analytics
+PURPOSE: Explain Proxie's data platform and data accessibility service.
+SEO TITLE: Data Platforms & Accessibility | Proxie Studio
+META DESCRIPTION: Tailored cloud or on-premises data platforms that collect, integrate and store data automatically, so you spend time deciding, not managing data.
+
+HERO
+  Headline: Data platforms & accessibility
+  Subheadline: Tailored data platforms that streamline how data is collected, integrated and stored, so you can focus on decisions instead of managing data by hand.
+  CTA: Discuss your data platform → /contact
+
+SECTIONS
+  [Data platforms]
+    Heading: High-quality data, automatically
+    Body: We collect, process and store your data with high-quality integration, and automate the flow so it is always available and accurate. Every platform is designed for your needs, whether cloud-based or on-premises.
+  [Data accessibility & decision-making]
+    Heading: Data that is easy to reach and use
+    Body: —
+    Items:
+      - Seamless data integration: information from multiple sources in one place.
+      - Insight-driven approach: less time managing data, more time deciding.
+      - Modern technology: cloud platforms and data warehouses.
+      - Efficient data processes: streamlined, optimised workflows.
+
+CTA / CLOSING: Related: Business Intelligence & Analytics · Integration Platforms. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Business Intelligence & Analytics
+SUGGESTED ROUTE: /services/data-analytics/business-intelligence
+PARENT: Data & Analytics
+PURPOSE: Explain Proxie's BI, analytics and data visualisation service.
+SEO TITLE: Business Intelligence & Analytics | Proxie Studio
+META DESCRIPTION: Advanced analysis and clear visualisations that turn raw data into actionable insight, with centralised, up-to-date data and tailored strategies.
+
+HERO
+  Headline: Business Intelligence & Analytics
+  Subheadline: Unlock the full potential of your data with advanced analysis and intuitive visualisations that simplify decision-making.
+  CTA: Talk to us about BI → /contact
+
+SECTIONS
+  [From data to insight]
+    Heading: From raw data to actionable insight
+    Body: We specialise in advanced data analysis and turn complex information into clear, intuitive visualisations. We centralise your data and keep it up to date, and we uncover strategic growth opportunities that drive efficiency and innovation.
+    Items:
+      - Centralised data management: critical information organised and up to date.
+      - Tailored strategies: solutions designed for your unique challenges.
+      - Modern technology: up-to-date databases and advanced software.
+      - Smarter decision-making: data that is easy to interpret.
+
+CTA / CLOSING: Related: Data Platforms · Corporate Performance Management. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Corporate Performance Management
+SUGGESTED ROUTE: /services/data-analytics/corporate-performance-management
+PARENT: Data & Analytics
+PURPOSE: Explain Proxie's corporate performance management (planning, reporting, financial processes) service.
+SEO TITLE: Corporate Performance Management | Proxie Studio
+META DESCRIPTION: Better data quality, cross-department collaboration and robust financial tools that replace error-prone spreadsheets and speed up reporting.
+
+HERO
+  Headline: Enhanced performance, streamlined operations
+  Subheadline: We help you optimise corporate performance through better data quality, cross-department collaboration and robust financial solutions.
+  CTA: Simplify your reporting → /contact
+
+SECTIONS
+  [Corporate performance management]
+    Heading: Strategy that actually gets implemented
+    Body: Successful strategy depends on good data and teams that work together. We help solve the common blockers, so operations run smoother and decisions get better.
+    Items: (challenges we solve)
+      - Delayed access to critical data
+      - Gaps in transparency
+      - Complex legal and financial reporting
+  [Simplify your workflow]
+    Heading: Simplify your workflow
+    Body: We replace disorganised processes and error-prone spreadsheets with the right tools. Data quality and accuracy improve, operations become more efficient and secure, and your teams can focus on high-impact work that drives growth.
+
+CTA / CLOSING: Related: Business Intelligence & Analytics · ERP. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+
+=== PILLAR 2: AI & AUTOMATION ===
+
+---------------------------------------------------------------
+PAGE: AI & Automation
+SUGGESTED ROUTE: /services/ai-automation
+PARENT: Services
+PURPOSE: Pillar page for AI, IoT, process automation and integration.
+SEO TITLE: AI & Automation Services | Proxie Studio
+META DESCRIPTION: Custom AI, IoT, process automation and integration platforms that cut manual work, reduce costs and speed up decisions, from strategy to implementation.
+
+HERO
+  Headline: AI & Automation
+  Subheadline: We build systems that think, learn and adapt, with AI, machine learning, IoT and automation that streamline processes and reduce costs.
+  CTA: Explore what AI can do for you → /contact
+
+SECTIONS
+  [Our areas of expertise]
+    Heading: Our areas of expertise
+    Body: —
+    Items: (each links to its service page)
+      - Artificial Intelligence: Custom AI, from machine learning and predictive analytics to generative AI and NLP.
+      - IoT Solutions: Connected devices and real-time data, end to end from hardware to cloud.
+      - Process Automation & RPA: Automate repetitive tasks and formalise processes for a more efficient organisation.
+      - Integration Platforms: Connect your applications and automate the data flows between them.
+
+  [Why work with us]
+    Heading: From prototype to production
+    Body: We support you end to end, from strategy to implementation. Clients highlight our fast, reliable AI prototypes that scale smoothly into production.
+    Items:
+      - Quote: [REUSE: Testimonial – Michelle Mccoy, Vans Singapore]
+
+CTA / CLOSING: Have a process worth automating? → Contact Us (/contact)
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Artificial Intelligence
+SUGGESTED ROUTE: /services/ai-automation/artificial-intelligence
+PARENT: AI & Automation
+PURPOSE: Explain Proxie's custom AI services.
+SEO TITLE: Artificial Intelligence Solutions | Proxie Studio
+META DESCRIPTION: Custom AI, including machine learning, deep learning, predictive analytics, generative AI and NLP, with end-to-end support from strategy to implementation.
+
+HERO
+  Headline: Artificial Intelligence
+  Subheadline: We use AI, including machine learning, deep learning and predictive analytics, to streamline processes, improve decisions and reduce costs.
+  CTA: Start your AI project → /contact
+
+SECTIONS
+  [AI for every industry]
+    Heading: AI that works for your business
+    Body: We bring AI to every industry. We streamline business processes and enable smarter, real-time decisions that cut costs and raise productivity.
+    Items: (capabilities)
+      - Generative AI
+      - Machine learning
+      - Deep learning
+      - Predictive analytics
+      - Natural language processing (NLP)
+  [Work easier with AI]
+    Heading: Work easier with AI
+    Body: —
+    Items:
+      - Custom AI solutions: strategies designed around your needs and goals.
+      - End-to-end support: from strategy to implementation and integration.
+      - Automated decision-making: advanced analytics and automation that raise productivity and improve customer service.
+
+CTA / CLOSING: Related: Process Automation & RPA · IoT Solutions. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: IoT Solutions
+SUGGESTED ROUTE: /services/ai-automation/iot
+PARENT: AI & Automation
+PURPOSE: Explain Proxie's IoT services for business optimisation.
+SEO TITLE: IoT Solutions for Business Optimisation | Proxie Studio
+META DESCRIPTION: IoT, AI and machine learning that optimise processes and cut costs, with end-to-end delivery from hardware to cloud and proven large-scale IoT experience.
+
+HERO
+  Headline: IoT solutions for business optimisation
+  Subheadline: We combine IoT, AI and machine learning to optimise processes, reduce costs and drive growth, turning device data into insight.
+  CTA: Discuss your IoT project → /contact
+
+SECTIONS
+  [What IoT does for you]
+    Heading: Connected operations
+    Body: —
+    Items:
+      - Streamlined operations: automated processes and higher efficiency.
+      - Lower costs: less waste and better use of resources.
+      - Growth opportunities: real-time data insights.
+      - End-to-end service: complete solutions from hardware to cloud, integrated across your business.
+  [Harness the power of IoT]
+    Heading: Harness the power of IoT
+    Body: We turn IoT data into actionable insight and combine it with your other data sources for a unified view of your operations. With proven success in large-scale IoT projects, we connect production units to business systems so data flows efficiently.
+
+CTA / CLOSING: Related: Artificial Intelligence · Data Platforms. See also: Manufacturing (/industries/manufacturing). Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Process Automation & RPA
+SUGGESTED ROUTE: /services/ai-automation/process-automation
+PARENT: AI & Automation
+PURPOSE: Explain Proxie's process development, RPA and automation services.
+SEO TITLE: Process Automation & RPA | Proxie Studio
+META DESCRIPTION: Automate repetitive tasks with RPA and AI. We optimise and formalise your processes and fit automation into your existing workflow.
+
+HERO
+  Headline: Optimised processes, smart automation
+  Subheadline: We automate repetitive tasks and optimise business processes with tailored solutions that fit into your existing workflow.
+  CTA: Find your automation opportunities → /contact
+
+SECTIONS
+  [Process development & automation]
+    Heading: Save time, free up resources
+    Body: With robotic process automation (RPA) and process automation, we take repetitive work off your teams' plates and build a more resource-efficient organisation. Every solution integrates with the way you already work.
+  [Simplify decision-making]
+    Heading: Simplify decision-making
+    Body: —
+    Items:
+      - AI-driven insights: machine learning models that simplify and improve decisions.
+      - Transparent operations: processes defined and formalised for clearer, smoother business functions.
+      - Streamlined workflows: manual tasks removed from day-to-day operations.
+
+CTA / CLOSING: Related: Integration Platforms · Low-Code Development. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Integration Platforms
+SUGGESTED ROUTE: /services/ai-automation/integration-platforms
+PARENT: AI & Automation
+PURPOSE: Explain Proxie's system integration and integration platform service.
+SEO TITLE: Integration Platforms | Proxie Studio
+META DESCRIPTION: Integration platforms that connect your applications, automate data flows and give your teams one consistent picture of the business.
+
+HERO
+  Headline: Connect your systems, automate your work
+  Subheadline: When systems don't talk to each other, people end up copying data between them. We build integration platforms that connect your applications and give everyone one consistent picture of the business.
+  CTA: Talk integration → /contact
+
+SECTIONS
+  [How we integrate]
+    Heading: Integrations designed around your goals
+    Body: Cloud or hybrid, real-time or scheduled, we use APIs and event-driven patterns that are reliable, secure and easy to monitor.
+  [Automation across systems]
+    Heading: Then we automate the work in between
+    Body: Once your systems are connected, we automate the work that runs across them, so fewer tasks depend on someone moving data by hand.
+    Items:
+      - Approvals
+      - Notifications
+      - Order flows
+      - Reporting
+
+CTA / CLOSING: Related: Process Automation & RPA · ERP. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+
+=== PILLAR 3: BUSINESS APPLICATIONS ===
+
+---------------------------------------------------------------
+PAGE: Business Applications
+SUGGESTED ROUTE: /services/business-applications
+PARENT: Services
+PURPOSE: Pillar page for CRM, ERP, low-code and digital signing.
+SEO TITLE: Business Applications | Proxie Studio
+META DESCRIPTION: Tailored CRM, ERP, low-code apps and digital signing that streamline operations, improve decisions and drive growth.
+
+HERO
+  Headline: Business Applications
+  Subheadline: Tools with purpose. We develop smart, tailored applications that optimise operations, improve decision-making and drive business performance.
+  CTA: Find the right tools → /contact
+
+SECTIONS
+  [Our areas of expertise]
+    Heading: Our areas of expertise
+    Body: —
+    Items: (each links to its service page)
+      - CRM: Sales, Marketing & Customer Service: One view of every customer, plus automation that boosts sales and customer satisfaction.
+      - ERP: Finance, supply chain and operations in one reliable source of truth.
+      - Low-Code Development: Cost-effective custom apps and workflows, shipped in weeks.
+      - Digital Signing & Authentication: E-signatures and strong identity verification inside the tools you already use.
+  [Why it matters]
+    Heading: Built for growth
+    Body: —
+    Items:
+      - Tailored business solutions: custom tools for sales, marketing, customer service and ERP.
+      - Growth and engagement: CRM and analytics that boost sales, marketing and customer satisfaction.
+      - Scalable development: cost-effective apps and workflows built on low-code platforms.
+
+CTA / CLOSING: Need systems that talk to each other? See Integration Platforms → /services/ai-automation/integration-platforms. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: CRM: Sales, Marketing & Customer Service
+SUGGESTED ROUTE: /services/business-applications/crm
+PARENT: Business Applications
+PURPOSE: Explain Proxie's CRM and marketing automation service for sales, marketing and customer service teams.
+SEO TITLE: CRM for Sales, Marketing & Service | Proxie Studio
+META DESCRIPTION: CRM and marketing automation tailored to your teams: one customer record, automated lead nurturing and shared dashboards that tie campaigns to revenue.
+
+HERO
+  Headline: One view of every customer
+  Subheadline: We help sales, marketing and customer service teams see the full customer journey in one place, with CRM and marketing automation tailored to how you work.
+  CTA: Talk CRM → /contact
+
+SECTIONS
+  [What we do]
+    Heading: Every lead, campaign and deal, tracked and actionable
+    Body: We connect your CRM, marketing automation and analytics, so leads are captured, nurtured and handed to sales at the right moment. With clear pipelines and shared reporting, your teams spend their time on conversations and customer satisfaction, not spreadsheets.
+  [Typical outcomes]
+    Heading: Typical outcomes
+    Body: —
+    Items:
+      - A single customer record
+      - Automated lead nurturing
+      - Shared sales and marketing dashboards
+      - Campaigns measured against revenue
+
+CTA / CLOSING: Related: ERP · Integration Platforms. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: ERP
+SUGGESTED ROUTE: /services/business-applications/erp
+PARENT: Business Applications
+PURPOSE: Explain Proxie's ERP implementation and adaptation service.
+SEO TITLE: ERP Implementation & Support | Proxie Studio
+META DESCRIPTION: ERP implemented and adapted to your processes, bringing finance, supply chain and operations into one reliable source of truth, with training and support.
+
+HERO
+  Headline: One system for the way you operate
+  Subheadline: ERP is the backbone of your operations. We implement and adapt ERP solutions that bring your financials, supply chain and operations into one reliable source of truth.
+  CTA: Plan your ERP project → /contact
+
+SECTIONS
+  [Implementation]
+    Heading: Configured around your processes
+    Body: We map your processes, configure the platform to match them and integrate it with the tools your teams already use, from accounting and reporting to collaboration and analytics. Data flows automatically instead of being re-entered by hand.
+  [After go-live]
+    Heading: Support that continues after launch
+    Body: —
+    Items:
+      - Hands-on support after go-live
+      - User training
+      - Regular reviews, so the system evolves with new products, markets and ways of working
+
+CTA / CLOSING: Related: Integration Platforms · Corporate Performance Management. See also: Retail (/industries/retail). Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Low-Code Development
+SUGGESTED ROUTE: /services/business-applications/low-code
+PARENT: Business Applications
+PURPOSE: Explain Proxie's low-code application development service.
+SEO TITLE: Low-Code Development | Proxie Studio
+META DESCRIPTION: Custom business apps and workflows on low-code platforms, with the speed of visual development and the discipline of a software team.
+
+HERO
+  Headline: Ship business apps in weeks
+  Subheadline: Low-code lets you respond to business needs as fast as they appear. We build custom applications and workflows on low-code platforms, combining the speed of visual development with the discipline of a software team.
+  CTA: Start building → /contact
+
+SECTIONS
+  [How it works]
+    Heading: Build together, see progress every few days
+    Body: Visual building blocks let business experts and developers shape an app together, reviewing working screens every few days instead of waiting for a big release.
+  [What we provide]
+    Heading: Low-code done properly
+    Body: —
+    Items:
+      - Platform selection that fits your landscape
+      - Governance that keeps apps secure and maintainable
+      - Training, so your people can extend what we build
+
+CTA / CLOSING: Related: Process Automation & RPA · Integration Platforms. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Digital Signing & Authentication
+SUGGESTED ROUTE: /services/business-applications/digital-signing
+PARENT: Business Applications
+PURPOSE: Explain Proxie's e-signature and identity verification integration service.
+SEO TITLE: Digital Signing & Authentication | Proxie Studio
+META DESCRIPTION: E-signatures and strong authentication built into your existing tools. Agreements completed in minutes, with a clear audit trail for every step.
+
+HERO
+  Headline: Sign and verify with confidence
+  Subheadline: We bring e-signatures and strong identity verification into the tools your teams already use, so agreements no longer wait on paper.
+  CTA: Go paperless → /contact
+
+SECTIONS
+  [What changes]
+    Heading: From paper to minutes
+    Body: Replace printing, scanning and posting with digital signatures and strong authentication built into your existing workflows.
+    Items:
+      - Agreements completed in minutes
+      - A clear audit trail for every step
+      - Signing on any device for customers, partners and employees
+      - Full visibility of who signed what, and when
+
+CTA / CLOSING: Related: CRM: Sales, Marketing & Customer Service · Integration Platforms. See also: Public Sector (/industries/public-sector). Button: Contact Us → /contact
+---------------------------------------------------------------
+
+
+=== PILLAR 4: DIGITAL EXPERIENCE ===
+
+---------------------------------------------------------------
+PAGE: Digital Experience
+SUGGESTED ROUTE: /services/digital-experience
+PARENT: Services
+PURPOSE: Pillar page for branding, UX, websites, e-commerce, intranets and mobile apps.
+SEO TITLE: Digital Experience: Design, Web & Apps | Proxie Studio
+META DESCRIPTION: Branding, UX design, websites, e-commerce, intranets and mobile apps: intuitive digital products that delight users and elevate brands.
+
+HERO
+  Headline: Digital Experience
+  Subheadline: Where design meets function. We create intuitive, elegant digital products that captivate users and elevate brands through thoughtful interaction and design.
+  CTA: Start your project → /contact
+
+SECTIONS
+  [Our areas of expertise]
+    Heading: Our areas of expertise
+    Body: From brand and UX to web development, we craft high-quality digital experiences that exceed your customers' expectations.
+    Items: (each links to its service page)
+      - Branding: A clear, consistent identity that is recognisably yours.
+      - UX & Design: Research-led interfaces that feel effortless and are ready for development.
+      - Websites & Web Applications: Fast, accessible, secure sites and web apps built for growth.
+      - E-Commerce & PIM: Online stores that are easy to shop and easy to run.
+      - Smart Intranets: One place for news, knowledge and tools.
+      - Mobile Apps: Native or cross-platform apps people come back to.
+
+CTA / CLOSING: Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Branding
+SUGGESTED ROUTE: /services/digital-experience/branding
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's brand identity service.
+SEO TITLE: Branding & Visual Identity | Proxie Studio
+META DESCRIPTION: Positioning, visual identity, tone of voice and guidelines, brought to life across your website, product and marketing.
+
+HERO
+  Headline: A brand with a clear point of view
+  Subheadline: Your brand is the first thing people notice and the last thing they forget. We help you shape an identity that is clear, consistent and recognisably yours.
+  CTA: Talk brand → /contact
+
+SECTIONS
+  [How we work]
+    Heading: From brand platform to every touchpoint
+    Body: We work alongside your team to define what makes you different and how you want to be perceived. That becomes a brand platform, which we then bring to life across your website, product and marketing.
+    Items: (what the brand platform includes)
+      - Positioning
+      - Visual identity
+      - Tone of voice
+      - Brand guidelines
+
+CTA / CLOSING: Related: UX & Design · Websites & Web Applications. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: UX & Design
+SUGGESTED ROUTE: /services/digital-experience/ux-design
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's UX research, interaction and UI design service.
+SEO TITLE: UX & Design | Proxie Studio
+META DESCRIPTION: User research, prototypes and design systems that make products effortless to use and faster to build.
+
+HERO
+  Headline: Design that puts people first
+  Subheadline: Good design is invisible: it simply works. We combine user research, interaction design and visual craft to create interfaces that feel effortless, look polished and are ready for development from day one.
+  CTA: Talk design → /contact
+
+SECTIONS
+  [Research & prototyping]
+    Heading: Evidence, not assumptions
+    Body: We start by understanding how your users think and what they want to achieve. With research, wireframes and interactive prototypes, we test ideas early.
+  [Design systems]
+    Heading: A design system that scales
+    Body: The result is a cohesive design system that keeps your product consistent as it grows and helps designers and engineers move faster together.
+    Items:
+      - Components
+      - Typography
+      - Colour
+      - Motion
+
+CTA / CLOSING: Related: Branding · Mobile Apps. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Websites & Web Applications
+SUGGESTED ROUTE: /services/digital-experience/websites
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's website and web application development service.
+SEO TITLE: Websites & Web Applications | Proxie Studio
+META DESCRIPTION: Fast, accessible and secure websites, customer portals and web apps, taken from architecture to launch and improved after go-live.
+
+HERO
+  Headline: Built for speed, search and growth
+  Subheadline: Your website is often your first conversation with a customer. We design and build fast, accessible and secure websites and web applications that turn a first visit into a lasting relationship.
+  CTA: Plan your website → /contact
+
+SECTIONS
+  [Our approach]
+    Heading: Performance first
+    Body: Using proven frameworks and a performance-first approach, we deliver sites that load quickly, rank well and are easy for your team to update. We take every project from architecture to launch and keep improving it after go-live.
+    Items: (what we build)
+      - Marketing websites
+      - Customer portals
+      - Complex web applications
+
+CTA / CLOSING: Related: UX & Design · E-Commerce & PIM. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: E-Commerce & PIM
+SUGGESTED ROUTE: /services/digital-experience/e-commerce
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's e-commerce and product information management service.
+SEO TITLE: E-Commerce & PIM | Proxie Studio
+META DESCRIPTION: Online stores that are easy to shop and easy to run, with product information management that keeps every listing accurate on every channel.
+
+HERO
+  Headline: Commerce that scales with your catalogue
+  Subheadline: We build online stores that are easy to shop and easy to run, backed by product information management (PIM) that keeps every listing accurate across every channel.
+  CTA: Grow your online store → /contact
+
+SECTIONS
+  [Storefront]
+    Heading: Frictionless from search to checkout
+    Body: A strong storefront needs more than good design. We connect checkout, payments, inventory and fulfilment into one smooth flow, so customers find what they need and buy without friction.
+  [PIM]
+    Heading: Product data in one place
+    Body: With a PIM at the centre, descriptions, specifications, images and pricing are maintained once and published everywhere. Your range can grow without the manual work growing with it.
+    Items: (channels)
+      - Your webshop
+      - Marketplaces
+      - Print
+
+CTA / CLOSING: Related: Websites & Web Applications · ERP. See also: Retail (/industries/retail). Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Smart Intranets
+SUGGESTED ROUTE: /services/digital-experience/intranets
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's intranet design, build and adoption service.
+SEO TITLE: Smart Intranets | Proxie Studio
+META DESCRIPTION: Intranets that bring people, knowledge and tools together, tailored to your organisation and integrated with the platforms you already use.
+
+HERO
+  Headline: One place for news, knowledge and tools
+  Subheadline: Teams work across offices, homes and time zones. A smart intranet brings people, knowledge and tools together, so everyone finds what they need and stays connected wherever they work.
+  CTA: Talk intranets → /contact
+
+SECTIONS
+  [Designed around how you work]
+    Heading: Less hunting, more meaningful work
+    Body: Every intranet is tailored to your structure, culture and existing tools, and integrates with the platforms you already rely on rather than replacing them.
+    Items:
+      - Personalised news
+      - Searchable knowledge
+      - Team spaces
+      - Quick access to everyday systems
+  [Adoption]
+    Heading: Launch is just the beginning
+    Body: We help with rollout and adoption, then keep refining the intranet based on how your people actually use it.
+
+CTA / CLOSING: Related: UX & Design · Integration Platforms. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Mobile Apps
+SUGGESTED ROUTE: /services/digital-experience/mobile-apps
+PARENT: Digital Experience
+PURPOSE: Explain Proxie's native and cross-platform mobile app development service.
+SEO TITLE: Mobile App Development | Proxie Studio
+META DESCRIPTION: Native or cross-platform mobile apps with fast performance, thoughtful design and solid security, from first sketch to the App Store and Google Play.
+
+HERO
+  Headline: From first sketch to app store
+  Subheadline: We design and build mobile apps that people come back to. Native or cross-platform, we focus on fast performance, thoughtful design and solid security.
+  CTA: Build your app → /contact
+
+SECTIONS
+  [One team, start to finish]
+    Heading: Nothing lost between disciplines
+    Body: One team takes your app from idea to the App Store and Google Play, covering strategy, design, engineering and QA.
+  [After launch]
+    Heading: Better with every release
+    Body: After launch we watch how the app is used, listen to feedback and ship regular improvements, so it keeps getting better as your audience grows.
+  [Proof]
+    Heading: We ship our own apps too
+    Body: Blind Companion and Session Pilot are Proxie Studio's own AI-powered apps. → /about/products
+
+CTA / CLOSING: Related: UX & Design · Artificial Intelligence. Button: Contact Us → /contact
+---------------------------------------------------------------
+
+
+=== INDUSTRIES ===
+
+---------------------------------------------------------------
+PAGE: Industries
+SUGGESTED ROUTE: /industries
+PARENT: top level
+PURPOSE: Overview of the sectors Proxie serves, linking to each industry page.
+SEO TITLE: Industries | Proxie Studio
+META DESCRIPTION: Data, AI and digital solutions for retail, energy, manufacturing and the public sector, shaped by each sector's challenges.
+
+HERO
+  Headline: Industries we serve
+  Subheadline: Every sector has its own pressures. We combine our data, AI and software expertise with an understanding of yours.
+  CTA: Talk to us about your sector → /contact
+
+SECTIONS
+  [Industries]
+    Heading: Where we work
+    Body: —
+    Items: (each links to its industry page)
+      - Retail: Omnichannel experiences, smarter pricing and better forecasts for tight margins and high expectations.
+      - Energy: Customer journeys, planning and IoT/AI insight for a sector in transition.
+      - Manufacturing: Production data, IoT and connected business applications that cut waste and drive innovation.
+      - Public Sector: Secure, accessible digital services that make everyday interactions simpler.
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Retail
+SUGGESTED ROUTE: /industries/retail
+PARENT: Industries
+PURPOSE: Show how Proxie helps retailers, from online brands to store chains.
+SEO TITLE: Retail Technology Solutions | Proxie Studio
+META DESCRIPTION: ERP, omnichannel integration, e-commerce, AI pricing and forecasting that help retailers protect margins and delight customers.
+
+HERO
+  Headline: Retail
+  Subheadline: Retailers face rising customer expectations, tight margins and fragile supply chains. Data-driven solutions help you deliver seamless omnichannel experiences.
+  CTA: Talk retail → /contact
+
+SECTIONS
+  [How we can help you]
+    Heading: How we can help you
+    Body: From fast-growing online brands to established store chains, we help retailers turn data into value and technology into a competitive advantage.
+    Items:
+      - Scale with ERP: Expand into new markets and channels on a solid foundation. We implement and tailor ERP that unites finance, inventory and point of sale in one system. → ERP
+      - Omnichannel integration: We connect your webshop, stores, marketplaces and customer service so stock, orders and customer data stay in sync. Customers can browse online, collect in store and return anywhere, across both B2B and B2C. → Integration Platforms
+      - E-commerce platforms: Engaging online stores with tailored e-commerce and PIM that present your products at their best and make shopping effortless. → E-Commerce & PIM
+      - Optimised pricing: Machine-learning pricing models weigh demand, competition and stock levels to suggest the right price for every product, protecting margins without losing sales. → Artificial Intelligence
+      - Digital marketing that converts: From SEO and paid search to conversion optimisation, we bring the right visitors to your store and turn them into loyal customers. → Websites & Web Applications
+      - Better forecasting: Accurate demand forecasts mean less overstock and fewer empty shelves. We combine your sales history with planning and BI tools, so buying decisions rest on data, not guesswork. → Business Intelligence & Analytics
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+NOTE: Digital marketing appears only on this page and is not a standalone service.
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Energy
+SUGGESTED ROUTE: /industries/energy
+PARENT: Industries
+PURPOSE: Show how Proxie helps energy and electricity companies.
+SEO TITLE: Energy Sector Solutions | Proxie Studio
+META DESCRIPTION: Customer portals, planning tools, IoT, AI and business applications that help energy companies cut costs and serve customers better.
+
+HERO
+  Headline: Energy
+  Subheadline: The energy sector is shaped by the shift to renewables, rising electricity demand and changing customer expectations. Strained infrastructure, extreme weather, rising costs and geopolitical uncertainty all call for innovative and secure solutions.
+  CTA: Talk energy → /contact
+
+SECTIONS
+  [How we can help you]
+    Heading: How we can help you
+    Body: —
+    Items:
+      - Strengthen the whole customer journey: Energy customers expect clear information and simple self-service. We build the data platforms, websites and customer portals that make every step, from sign-up to billing, easier.
+      - Minimise impact with insight and optimisation: Machine learning helps you predict and prevent problems, from network load to asset failures, while route and resource optimisation cut both costs and environmental impact.
+      - Optimise costs with planning solutions: Volatile prices and shifting markets call for agile planning. Our planning and forecasting solutions give a reliable view of costs, investments and capital expenditure, so you can act early.
+      - Save time with IoT and AI: AI-powered image recognition, connected sensors and modern data warehouses turn inspections and reporting that once took months into work that takes weeks, with dashboards the whole organisation can use.
+      - Business applications beyond sales: We extend CRM and business applications beyond sales into systems that improve the customer experience, generate leads and break down silos between departments.
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Manufacturing
+SUGGESTED ROUTE: /industries/manufacturing
+PARENT: Industries
+PURPOSE: Show how Proxie helps manufacturers use data, IoT and business applications.
+SEO TITLE: Manufacturing Solutions: Data, IoT & ERP | Proxie Studio
+META DESCRIPTION: Turn machine data into insight, cut waste with IoT and cloud data platforms, and connect ERP to the rest of your business.
+
+HERO
+  Headline: Manufacturing
+  Subheadline: Supply chains are growing more complex and competition is getting tougher. Manufacturers need efficient production with minimal waste while keeping up with new regulations. Let Proxie Studio be your partner in meeting these challenges.
+  CTA: Talk manufacturing → /contact
+
+SECTIONS
+  [Insight that drives innovation]
+    Heading: Gain business insights that drive innovation
+    Body: Your machines and production lines generate huge amounts of data. With our expertise in data integration, data transformation and APIs, we turn it into insight that supports critical decisions, automates manual processes and prepares you for AI. Advanced forecasting models help reduce customer churn and optimise stock turnover.
+  [Efficiency and less waste]
+    Heading: Increase operational efficiency and reduce waste
+    Body: —
+    Items:
+      - IoT for efficiency: connected sensors and Power BI dashboards give a structured view of energy use and carbon footprint across systems.
+      - Smarter stock management: real-time IoT data shows what is running low and where, so replenishment happens before it becomes a problem.
+      - Production optimised with data platforms: modern cloud data platforms collect and analyse machine data, giving you the insight to fine-tune every line.
+  [Business applications]
+    Heading: Get the most from your business applications
+    Body: We help manufacturers move ERP and business applications to the cloud for greater flexibility, and connect them to the rest of the business.
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Public Sector
+SUGGESTED ROUTE: /industries/public-sector
+PARENT: Industries
+PURPOSE: Show how Proxie helps public organisations modernise their services.
+SEO TITLE: Public Sector Digital Services | Proxie Studio
+META DESCRIPTION: Secure, accessible and easy-to-use digital services that help public organisations serve citizens, employees and institutions better.
+
+HERO
+  Headline: Tackling modern challenges with the right technology
+  Subheadline: Public sector leaders face complex challenges, from climate change to cybersecurity. The right technology is essential to address them and keep services working for citizens.
+  CTA: Talk to us → /contact
+
+SECTIONS
+  [Digital services for a modern society]
+    Heading: Digital services for a modern society
+    Body: We help public organisations modernise their services through digital transformation, with a focus on security, accessibility and ease of use. Our experts deliver solutions that make everyday interactions simpler for citizens, employees and institutions alike.
+    Items: (focus areas)
+      - Security
+      - Accessibility
+      - Ease of use
+
+CTA / CLOSING: Related services: Digital Signing & Authentication · Websites & Web Applications. [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+
+=== COMPANY ===
+
+---------------------------------------------------------------
+PAGE: About
+SUGGESTED ROUTE: /about
+PARENT: top level
+PURPOSE: Tell Proxie's story, vision, values, way of working and offices, and build trust.
+SEO TITLE: About Us | Proxie Studio
+META DESCRIPTION: Proxie Studio is a technology partner for data, software and AI, with offices in Umeå, Sweden and Ludhiana, India.
+
+HERO
+  Headline: Technology with a human touch
+  Subheadline: Proxie Studio is a technology partner for organisations that want to do more with data, software and AI. We combine Scandinavian design thinking with deep engineering expertise to build solutions that are practical, reliable and made to last.
+  CTA: Contact Us → /contact
+
+SECTIONS
+  [Key facts]
+    Heading: —
+    Body: —
+    Items: [REUSE: Stats – About facts]
+
+  [Trusted by]
+    Heading: Trusted by
+    Items: [REUSE: Client logos]
+
+  [Our story]
+    Heading: Our story
+    Body: Proxie Studio started with a simple idea: technology should make work easier, not more complicated. Too many organisations were held back by systems that didn't talk to each other, data they couldn't use and projects that took too long to deliver value. So we set out to build a different kind of technology partner, pairing strong expertise in data, AI and software engineering with a real understanding of how businesses operate. We listen first, build what fits and stay on to make sure it keeps delivering. Today our teams in Sweden and India work with clients across retail, energy, manufacturing and the public sector.
+
+  [Vision & mission]
+    Heading: Our vision and mission
+    Body: Vision: to lead with innovation, empower through technology and inspire trust through excellence. We envision a world where businesses achieve more with cutting-edge solutions and human-centric design.
+    Items: (mission)
+      - Deliver high-quality products and services that address real-world challenges.
+      - Build lasting relationships through trust, transparency and accountability.
+      - Empower individuals and organisations to grow and thrive in a fast-evolving digital landscape.
+
+  [The people behind Proxie]
+    Heading: The people behind Proxie
+    Body: Proxie is led by people who have spent their careers building and teaching technology, and who still enjoy rolling up their sleeves. They believe the best results come from small, experienced teams that take ownership and work closely with the people who will use what they build. That mindset runs through the company: curious, hands-on and honest about what will work for you.
+    Items: [REUSE: Founders]
+    NOTE: The founders are the only people to show. Do not add other team members, bios or roles.
+
+  [What we stand for]
+    Heading: What we stand for
+    Body: Four principles guide how we work with clients, partners and each other.
+    Items:
+      - Built around you: We start with your goals, not a ready-made package. Every solution is shaped around your people, processes and ambitions.
+      - Pragmatic innovation: We use AI and new technology where it creates real value, and keep things simple where it doesn't.
+      - Open and transparent: Clear communication, honest estimates and no surprises. You always know where your project stands.
+      - Quality that lasts: Secure, well-tested and maintainable solutions that keep working long after launch day.
+
+  [How we work]  (anchor: #how-we-work)
+    Heading: How we work
+    Body: A clear, collaborative process that takes you from idea to impact, fast and focused.
+    Items: [REUSE: Process – How we work] (full version, 4 numbered steps)
+    Sub-section "Agile delivery teams":
+      Body: Our agile team approach means better coordination, lower costs, higher quality and faster time to market. We start with a strategic roadmap that defines objectives and priorities, and we focus every delivery on your business goals.
+      Items:
+        - Strategic roadmap: clear objectives and priorities from day one.
+        - Scalable teams: the right expertise for your specific needs.
+        - Flexible delivery: oversee the process yourself, or let us manage it for you.
+
+  [Offices]
+    Heading: Two offices, one team
+    Body: Our roots in Sweden and our team in India give clients the best of both: close collaboration and Scandinavian design thinking, backed by deep engineering capacity.
+    Items:
+      - Sweden: Tvistevägen 48, 907 36 Umeå, Sweden
+      - India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
+
+  [More about us]
+    Heading: More about Proxie
+    Items:
+      - Our Products → /about/products
+      - Sustainability → /about/sustainability
+      - Careers → /careers
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Our Products
+SUGGESTED ROUTE: /about/products
+PARENT: About
+PURPOSE: Present the apps Proxie Studio builds and publishes itself, as proof of its research-lab and product capability.
+SEO TITLE: Our Products: AI Apps by Proxie Studio
+META DESCRIPTION: Proxie Studio builds its own AI-powered apps: Blind Companion, a visual assistant, and Session Pilot, which turns meetings into AI-generated notes.
+
+HERO
+  Headline: Products we build ourselves
+  Subheadline: Alongside client work, our research lab designs, builds and runs its own AI-powered apps.
+  CTA: Have a product idea? Talk to us → /contact
+
+SECTIONS
+  [Blind Companion]
+    Heading: Blind Companion
+    Body: An AI-powered visual assistant that helps users of all ages understand their surroundings. Point the camera, ask a question out loud, and hear the answer read back.
+    Items:
+      - Available on iOS and Android
+      - Camera-based image analysis powered by AI (Google Gemini)
+      - Spoken questions via speech-to-text; answers read aloud with text-to-speech on the device
+      - Images and audio are never stored on Proxie Studio's servers
+      - Account deletion directly in the app
+      - Monthly or annual subscription
+    Link: Privacy policy → /blind-companion-privacy-policy
+
+  [Session Pilot]
+    Heading: Session Pilot
+    Body: A mobile app that records and transcribes your sessions and turns them into AI-generated notes, linked to your Google Calendar events.
+    Items:
+      - Record and transcribe audio
+      - AI-generated, editable notes and summaries
+      - Notes linked to Google Calendar meetings
+      - Sign in with Google
+      - Notifications when transcripts and notes are ready
+      - Audio is not stored after transcription
+    Link: Privacy policy → /spprivacypolicy
+
+CTA / CLOSING: Want an app like this? See Mobile Apps (/services/digital-experience/mobile-apps) and Artificial Intelligence (/services/ai-automation/artificial-intelligence). Button: Contact Us → /contact
+NOTE: All product facts come from the apps' privacy policies. Call Session Pilot a "mobile app" without naming a platform. There are no app store links, app icons or screenshots; do not add any.
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Sustainability
+SUGGESTED ROUTE: /about/sustainability
+PARENT: About
+PURPOSE: Present Proxie's sustainability and responsibility commitments.
+SEO TITLE: Sustainability | Proxie Studio
+META DESCRIPTION: How sustainability shapes the way Proxie Studio works, who we work with and what we build, for our clients, our people and the planet.
+
+HERO
+  Headline: Building a sustainable future
+  Subheadline: Choosing Proxie Studio means working with people who drive positive change and contribute to a sustainable future.
+  CTA: —
+
+SECTIONS
+  [Our priorities]
+    Heading: Our priorities
+    Body: Sustainability shapes how we work, who we work with and what we build. These priorities guide our decisions for our clients, our people and the planet.
+    Items:
+      - A better tomorrow: We build digital solutions that help clients use resources more wisely and create lasting value for society.
+      - Towards carbon neutrality: We are reducing our own footprint through efficient cloud infrastructure, conscious travel and greener everyday choices.
+      - Spreading digital knowledge: We share what we know through training, mentoring and open collaboration, helping more people take part in the digital shift.
+      - Diversity and inclusion: Diverse teams build better products. We work for an inclusive workplace where everyone is welcome and able to grow.
+      - Ethical business: We act with honesty and transparency, and handle data and AI responsibly in everything we deliver.
+      - A sustainable supply chain: We choose partners and suppliers who share our values, and hold ourselves to the standards we ask of them.
+
+CTA / CLOSING: [REUSE: CTA – Let's build what's next]
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Careers
+SUGGESTED ROUTE: /careers
+PARENT: top level
+PURPOSE: Attract applicants and list open positions.
+SEO TITLE: Careers | Proxie Studio
+META DESCRIPTION: Join Proxie Studio in Umeå or Ludhiana. Work in small, experienced teams on data, AI and software projects. See open positions.
+
+HERO
+  Headline: Build what's next with us
+  Subheadline: Join a curious, hands-on team in Sweden and India that builds data, AI and software solutions for real businesses.
+  CTA: See open positions → #open-positions
+
+SECTIONS
+  [Open positions]  (anchor: #open-positions)
+    Heading: Open positions
+    Body: —
+    Items:
+      - Winter Internship. Button: "Apply" → https://accurate-angelfish-6d4.notion.site/2adbf1b8296d80c2a90ce24c0a5ddc80 (external application page, opens in a new tab)
+    NOTE: Only the title and the Apply link are known. Do not add a location, duration, requirements or deadline.
+    Empty state (when no roles are open): "We don't have any open positions right now, but we're always happy to hear from talented people. Get in touch →" /contact
+
+  [Why Proxie]
+    Heading: Why work with us
+    Body: —
+    Items:
+      - Small, experienced teams that take ownership and work closely with the people who use what we build.
+      - Learning culture: we share what we know through training, mentoring and open collaboration.
+      - An inclusive workplace where everyone is welcome and able to grow.
+      - Two offices, one team: work side by side across Sweden and India.
+      - Varied work across data, AI, business applications and digital experience, plus our own products.
+
+  [Locations]
+    Heading: Where we work
+    Items:
+      - Umeå, Sweden: Tvistevägen 48, 907 36 Umeå
+      - Ludhiana, India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab
+
+CTA / CLOSING: Questions about working at Proxie? Email enquiries@weareproxie.com or use the contact form → /contact
+NOTE: There are no benefits, salary, perks or hiring process to show. Do not invent any.
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Contact
+SUGGESTED ROUTE: /contact
+PARENT: top level
+PURPOSE: Let visitors send an enquiry and find Proxie's offices.
+SEO TITLE: Contact Us | Proxie Studio
+META DESCRIPTION: Want to know more or have a question? Send us a message or email enquiries@weareproxie.com. Offices in Umeå, Sweden and Ludhiana, India.
+
+HERO
+  Headline: Contact us
+  Subheadline: Want to know more or have a question? Drop us a message.
+  CTA: — (the form is the CTA)
+
+SECTIONS
+  [Contact form]
+    Heading: Send us a message
+    Body: —
+    Items: (form fields, in order)
+      - Name: text input, placeholder "Name", required
+      - Email: email input, placeholder "Email", required, validate email format
+      - Message: textarea, placeholder "Message", required
+      - Submit button: "Send message"
+    Messages:
+      - Success: "Thanks for your message! We'll get back to you soon."
+      - Error: "Something went wrong and your message wasn't sent. Please try again, or email us at enquiries@weareproxie.com."
+      - Validation: "Please fill in this field." / "Please enter a valid email address."
+    NOTE: No form back end exists yet. Keep the submit handler in one place so a back end can be connected later.
+
+  [Other ways to reach us]
+    Heading: Other ways to reach us
+    Items:
+      - Email: enquiries@weareproxie.com
+      - Sweden: Tvistevägen 48, 907 36 Umeå, Sweden
+      - India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
+      - Follow us: LinkedIn · Instagram · Facebook (each links to "#" for now)
+
+CTA / CLOSING: —
+---------------------------------------------------------------
+
+
+=== LEGAL ===
+NOTE: Legal text below is reproduced from the live site with only minor grammar fixes. Do not rewrite its meaning. The Terms & Conditions body is placeholder text for now.
+
+---------------------------------------------------------------
+PAGE: Privacy Policy
+SUGGESTED ROUTE: /privacy-policy
+PARENT: footer (legal)
+PURPOSE: Website privacy policy.
+SEO TITLE: Privacy Policy | Proxie Studio
+META DESCRIPTION: How Proxie Studio collects, uses and protects your personal information when you visit our website or use our services.
+
+HERO
+  Headline: Privacy Policy
+  Subheadline: —
+  CTA: —
+
+SECTIONS
+  [Introduction]
+    Body: At Proxie Studio, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use and safeguard your data when you visit our website or use our services.
+  [1. Information we collect]
+    Body: Personal information: When you register on our website, subscribe to our newsletter or participate in our community forums, we may collect personal information such as your name, email address and any other information you provide voluntarily. Usage data: We may also collect non-personal information about how you interact with our website and services, including your IP address, browser type, device information and pages visited.
+  [2. How we use your information]
+    Body: We use the information we collect for the following purposes:
+    Items:
+      - To provide and improve our website and services.
+      - To personalise your experience and customise the content you see.
+      - To communicate with you about updates, promotions and other relevant information.
+      - To analyse trends and user behaviour to enhance our offerings and user experience.
+      - To comply with legal requirements and enforce our terms of service.
+  [3. Data security]
+    Body: We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure or destruction. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.
+  [4. Sharing of information]
+    Body: We do not sell, trade or otherwise transfer your personal information to third parties without your consent, except as described in this Privacy Policy or as required by law. We may share your information with trusted third-party service providers who assist us in operating our website, conducting business or servicing you.
+  [5. Cookies]
+    Body: We use cookies and similar technologies to collect information about your browsing behaviour and preferences. You can choose to disable cookies in your browser settings, but some features of our website may not function properly if you do so.
+  [6. Your rights]
+    Body: You have the right to access, correct or delete your personal information at any time. You may also opt out of receiving marketing communications from us by following the unsubscribe instructions included in our emails.
+  [7. Changes to this policy]
+    Body: We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page, and the effective date will be updated accordingly. We encourage you to review this Privacy Policy periodically.
+  [8. Contact us]
+    Body: If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at enquiries@weareproxie.com.
+  [Consent]
+    Body: By using our website and services, you consent to the terms of this Privacy Policy.
+
+CTA / CLOSING: —
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Terms & Conditions
+SUGGESTED ROUTE: /terms
+PARENT: footer (legal)
+PURPOSE: Website terms and conditions of use.
+SEO TITLE: Terms & Conditions | Proxie Studio
+META DESCRIPTION: The terms and conditions that govern your use of the Proxie Studio website.
+
+HERO
+  Headline: Terms & Conditions
+  Subheadline: —
+  CTA: —
+
+SECTIONS
+  [Introduction]
+    Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  [1. Use of Proxie]
+    Body: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  [2. User accounts]
+    Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  [3. Content ownership]
+    Body: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  [4. Intellectual property]
+    Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  [5. Limitation of liability]
+    Body: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  [6. Indemnification]
+    Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  [7. Governing law]
+    Body: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  [8. Changes to these terms]
+    Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  [9. Contact us]
+    Body: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+CTA / CLOSING: —
+NOTE: Placeholder text. Final terms will replace it later; keep the section headings.
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Blind Companion Privacy Policy
+SUGGESTED ROUTE: /blind-companion-privacy-policy  (keep the existing URL; app stores likely link to it)
+PARENT: footer (legal); also linked from Our Products
+PURPOSE: Privacy policy for the Blind Companion app (iOS and Android).
+SEO TITLE: Blind Companion Privacy Policy | Proxie Studio
+META DESCRIPTION: How Proxie Studio collects, uses and protects your information when you use the Blind Companion app on iOS or Android.
+
+HERO
+  Headline: Blind Companion – Privacy Policy
+  Subheadline: —
+  CTA: —
+
+SECTIONS
+  [Introduction]
+    Body: This Privacy Policy describes how Proxie Studio ("we", "our" or "us") collects, uses and protects your information when you use Blind Companion (the "App") on iOS or Android devices. The App is an AI-powered visual assistant designed to help users of all ages understand their surroundings. By downloading or using the App on any platform, you agree to this Privacy Policy. Parents and guardians are encouraged to review this policy with their children.
+  [1. Information we collect]
+    Body: —
+    Items:
+      - 1.1 Camera and image data: The App requires camera access to capture images for AI-powered analysis. Images are transmitted in real time to Google's Gemini API for visual processing, are not stored on Proxie Studio's servers at any time, and are discarded immediately after an AI response is generated. We do not retain, sell or share your images with any party beyond what is required for real-time AI processing. This applies equally on iOS and Android.
+      - 1.2 Microphone and speech data (STT): The App uses your device's microphone to capture spoken queries. Audio is converted to text using on-device or platform-provided speech-to-text services (Apple Speech framework on iOS, Google Speech-to-Text on Android) and sent as text only to the Gemini API. Raw audio is never transmitted to or stored by Proxie Studio and is not retained by us in any form after the query is processed.
+      - 1.3 Text-to-speech (TTS) output: AI responses are read aloud using your device's built-in text-to-speech engine (AVSpeechSynthesizer on iOS, Android TTS API on Android). This happens locally on your device. We do not collect, transmit or store TTS audio.
+      - 1.4 Account information (via Supabase): When you create an account, we collect and securely store through Supabase your full name, email address, account creation date and a unique user ID (UUID). Passwords are never stored in plain text. All authentication is handled securely by Supabase (supabase.com/privacy).
+      - 1.5 Subscription and purchase data (via RevenueCat): Subscription management is handled by RevenueCat on both platforms. Data collected includes subscription plan (monthly or annual), subscription status (active, expired, cancelled), purchase history and entitlements, and platform identifier (Apple App Store or Google Play Store). We do not collect or store payment card details. All billing is processed by Apple (iOS) or Google (Android). See revenuecat.com/privacy.
+      - 1.6 Usage and diagnostic data: We may collect anonymised, non-identifiable data such as app version, device type, operating system and crash logs to improve app stability. This data cannot be linked to individual users and is handled consistently across iOS and Android.
+  [2. How we use your information]
+    Body: We use collected information to:
+    Items:
+      - Power the App's core features (image analysis, speech input, voice responses) on iOS and Android.
+      - Authenticate your identity and manage your account.
+      - Manage your subscription and access to premium features.
+      - Improve App performance and reliability across platforms.
+      - Respond to user support requests.
+      - Comply with applicable laws and platform policies.
+    Closing line: We do not sell, rent or share your personal information with third parties for advertising or marketing purposes.
+  [3. Platform-specific permissions]
+    Items:
+      - 3.1 iOS (Apple App Store): The App requests Camera (to capture images for AI analysis), Microphone (to capture spoken queries) and Speech Recognition (to convert spoken input to text). Permission prompts are displayed by the operating system. You may revoke any permission at any time via Settings → Blind Companion on your iPhone or iPad.
+      - 3.2 Android (Google Play Store): The App requests CAMERA (to capture images for AI analysis), RECORD_AUDIO (to capture spoken queries) and INTERNET (to communicate with the Gemini API, Supabase and RevenueCat). You may revoke any permission at any time via Settings → Apps → Blind Companion → Permissions.
+    Closing line: Revoking camera, microphone or speech permissions will disable the corresponding features of the App on either platform.
+  [4. Third-party services]
+    Body: The App integrates with the following third-party providers on iOS and Android. Each provider operates under its own terms and privacy policies. We are not responsible for the data practices of these third-party services.
+    Items:
+      - Google Gemini API: AI image and text analysis (policies.google.com/privacy)
+      - Supabase: user authentication and account storage (supabase.com/privacy)
+      - RevenueCat: subscription management, iOS and Android (revenuecat.com/privacy)
+      - Apple App Store: iOS payment processing (apple.com/legal/privacy)
+      - Google Play Store: Android payment processing (policies.google.com/privacy)
+  [5. Account deletion and data removal]
+    Items:
+      - 5.1 How to delete your account: You can delete your account at any time directly within the App on iOS and Android: Profile → Delete Account. No email, phone call or external website is required. The entire deletion process is completed inside the App.
+      - 5.2 What happens when you delete your account: Upon confirming deletion, your name, email address and all account data are permanently deleted from Supabase; your unique user ID and account record are removed instantly; and all subscription entitlements are immediately revoked on both platforms. There is no grace period or deferred deletion: data removal is instant and permanent.
+      - Important: Deleting your account in the App does not automatically cancel your App Store or Google Play subscription. You must cancel your subscription separately to stop future billing. iOS: Settings → [Your Name] → Subscriptions → Blind Companion → Cancel Subscription. Android: Google Play Store → Profile → Payments & Subscriptions → Subscriptions → Blind Companion → Cancel.
+      - 5.3 Your other data rights: Depending on your jurisdiction, you may have the right to access, correct or request a copy of your personal data. To exercise these rights, contact us using the details below.
+  [6. Children's privacy]
+    Body: Blind Companion is designed for users of all ages, including children. Proxie Studio is committed to protecting the privacy of younger users.
+    Items:
+      - We do not knowingly collect personal information from children under 13 beyond what is required for account creation (name and email).
+      - We do not use any user's data, including children's, for advertising, profiling or any secondary purpose.
+      - Parents or guardians may contact us at any time to review, correct or delete their child's account data.
+      - All data, regardless of user age, is protected equally under this policy.
+    Closing line: If you believe we have collected data from a child without appropriate consent, please contact us immediately and we will delete it promptly.
+  [7. Data security]
+    Body: Proxie Studio implements reasonable technical and organisational safeguards to protect your information, including encrypted data transmission (HTTPS/TLS) for all communications on iOS and Android, Supabase row-level security for database access control, and no permanent storage of image, audio or biometric data on our servers. No method of electronic transmission or storage is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security.
+  [8. Changes to this policy]
+    Body: We may update this Privacy Policy from time to time. The effective date at the top reflects the most recent revision. Continued use of the App on any platform after changes are posted constitutes your acceptance of the updated policy. We encourage you to review this page periodically.
+  [9. Contact]
+    Body: If you have questions, concerns or data requests regarding this Privacy Policy, please contact Proxie Studio:
+    Items:
+      - Email: enquiries@weareproxie.com
+      - App: Blind Companion
+      - Company: Proxie Studio
+      - Address: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
+      - Website: https://proxiestudio.com/
+
+CTA / CLOSING: —
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: Session Pilot Privacy Policy
+SUGGESTED ROUTE: /spprivacypolicy  (keep the existing URL; the app store likely links to it)
+PARENT: footer (legal); also linked from Our Products
+PURPOSE: Privacy policy and terms & conditions for the Session Pilot app.
+SEO TITLE: Session Pilot Privacy Policy & Terms | Proxie Studio
+META DESCRIPTION: How the Session Pilot app collects, uses and protects your data, and the terms that apply when you use it.
+
+HERO
+  Headline: Session Pilot – Privacy Policy
+  Subheadline: App: Session Pilot · Company: Proxie Studio Pvt. Ltd. · Contact: enquiries@weareproxie.com
+  CTA: —
+
+SECTIONS
+  [1. Introduction]
+    Body: Proxie Studio Pvt. Ltd. ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use and protect your personal information when you use our mobile application.
+  [2. Information we collect]
+    Items:
+      - a. Audio recordings: We access the device's microphone to capture voice input for transcription and note generation. Audio is processed through secure third-party services (e.g. Groq) and is not stored permanently.
+      - b. Transcriptions and notes: We store transcribed text and generated notes so you can view, edit and manage them at any time.
+      - c. Google authentication: When you sign in with Google (through Supabase), we collect your full name, email address, Google user ID and profile image (avatar). This data is used exclusively to authenticate you and personalise your experience in the app.
+      - d. Google Calendar access: To enable calendar-linked note organisation, we collect event titles, start and end times, and event descriptions. Calendar data is used solely to associate notes with meetings and improve organisational efficiency.
+      - e. Device permissions: The app may request access to the microphone (for audio capture), notifications (to notify you when notes are available) and images (to support image uploads to your notes).
+  [3. How we use your data]
+    Items:
+      - Convert audio into text and structured notes
+      - Link notes to Google Calendar events
+      - Authenticate and personalise your user session
+      - Display your name and profile image within the app
+      - Notify you about completed transcription or session status
+  [4. Third-party services]
+    Body: We use reputable services to enhance app functionality. These services process only the data required for their function and follow strict security protocols.
+    Items:
+      - Groq: audio transcription and AI-based note generation
+      - Supabase: authentication and secure cloud data management
+  [5. Data retention]
+    Items:
+      - Audio: not stored after transcription is complete
+      - Notes and transcriptions: retained until you delete them
+      - Calendar and profile information: retained for as long as your account is active
+  [6. Data security]
+    Body: We use encryption, secure APIs and controlled access to safeguard your information against unauthorised access or loss.
+  [7. User rights]
+    Items:
+      - View, modify or delete your notes
+      - Delete your account at any time
+      - Request removal of your profile data
+      - Revoke permissions through your Google account (which may affect app functionality)
+  [8. Children's privacy]
+    Body: This app is not intended for users under 13 years of age. We do not knowingly collect data from children.
+  [9. Changes to the policy]
+    Body: We may update this Privacy Policy periodically. Material changes will be communicated by email or in-app notification.
+  [10. Contact]
+    Body: If you have any questions about this policy, please contact us at enquiries@weareproxie.com.
+
+  --- Second part of the same page ---
+  [Session Pilot – Terms and Conditions]
+    Heading: Session Pilot – Terms and Conditions
+    Body: App: Session Pilot. Company: Proxie Studio Pvt. Ltd. Contact: enquiries@weareproxie.com.
+    Items:
+      - 1. Acceptance of terms: By using Session Pilot, you agree to these Terms and Conditions. If you do not agree, please do not use the application.
+      - 2. Eligibility and account creation: To use the application, you must be at least 13 years old, sign in with your Google account, and grant all required permissions (e.g. microphone, calendar access). During sign-in, we collect your Google profile information, including your profile image.
+      - 3. Application features: Session Pilot enables users to record and transcribe audio, generate and manage AI-powered notes, view personalised information within the app, and receive in-app notifications related to session status.
+      - 4. Permissions required: Microphone access (for audio recording), calendar access (for linking notes to events), Google profile access (for personalisation and identification), image access (for uploading visual content) and notification access (for session updates). Denying essential permissions may prevent access to core features.
+      - 5. User responsibilities: You agree not to use the application for unlawful purposes; upload offensive, harmful or malicious content; reverse-engineer, tamper with or exploit the platform; or infringe any third-party intellectual property rights.
+      - 6. AI-generated content: Notes and summaries are AI-generated and may contain inaccuracies. Verify information before relying on it for critical decisions.
+      - 7. Intellectual property: You retain ownership of your audio, notes and calendar content. Proxie Studio Pvt. Ltd. retains ownership of all source code, algorithms and designs related to the app.
+      - 8. Account termination: We reserve the right to suspend or terminate accounts if users violate these Terms, misuse app functionality, or revoke permissions the app needs to function.
+      - 9. Limitation of liability: We are not liable for errors in AI-generated notes, temporary service interruptions, or data loss caused by user actions or permission changes.
+      - 10. Changes to terms: We may update these Terms from time to time. Continued use of the app indicates acceptance of the updated Terms.
+      - 11. Governing law: These Terms are governed by the laws of the Republic of India. Any disputes are subject to the jurisdiction of Indian courts.
+      - 12. Contact: For support or legal questions, contact enquiries@weareproxie.com.
+
+CTA / CLOSING: —
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+PAGE: 404 – Page not found
+SUGGESTED ROUTE: (any unknown URL)
+PARENT: none
+PURPOSE: Help visitors who hit a broken or old link.
+SEO TITLE: Page Not Found | Proxie Studio
+META DESCRIPTION: The page you are looking for doesn't exist or has moved.
+
+HERO
+  Headline: Page not found
+  Subheadline: This page doesn't exist or has moved.
+  CTA: Back to home → /
+
+SECTIONS
+  [Helpful links]
+    Items: Services (/services) · Industries (/industries) · About (/about) · Contact Us (/contact)
+
+CTA / CLOSING: —
+---------------------------------------------------------------
+
+
+=====================================================================
+5. REUSABLE CONTENT
+=====================================================================
+
+[REUSE: Testimonials]
+  NOTE: Names, companies and quotes are final; reproduce them exactly. Only show a job title where one is given.
+  1. "Working with Proxie Studio was a game-changer for us. Their cloud solutions significantly improved our efficiency while keeping data security a top priority."
+     – Rajesh Mehra, IT Manager, Mercedes-Benz India (no photo)
+     Used on: Home ("From idea to impact").
+  2. "Proxie Studio combines strong AI expertise with real business insight, delivering practical, high-impact solutions."
+     – Erik Jakobsson, Volvo Cars (photo: images/testimonials/Type-2a.jpeg)
+     Used on: Home (testimonials).
+  3. "They built a fast, reliable AI prototype that scaled smoothly into production with minimal friction."
+     – Michelle Mccoy, Vans Singapore (photo: images/testimonials/Type2c.webp)
+     Used on: Home (testimonials), AI & Automation.
+  4. "A collaborative and dependable team: clear, transparent and easy to work with throughout the project."
+     – Kayla Ray, Daimler India (photo: images/testimonials/Type2b.jpg)
+     Used on: Home (testimonials).
+
+[REUSE: Client logos] ("Trusted by")
+  Vans · McLaren · Mercedes-Benz · Daimler · Bufferleaf
+  Files: images/brands/logo-vans.png, logo-mclaren.png, logo-mercedes.png, logo-daimler.png, logo-bufferleaf.png
+  Used on: Home, About.
+  NOTE: Volvo Cars appears in a testimonial but has no logo file. Do not add a logo that wasn't supplied.
+
+[REUSE: Stat – 2 weeks to beta users]
+  "2 weeks": launched and onboarded beta users with Proxie Studio, compared with building it alone.
+  Graphic: images/graph.svg, a launch-timeline chart comparing "with Proxie Studio" against "You Build it Alone", with the marker "2 Weeks – Launched & Onboarded Beta Users". Keep these labels exactly.
+  Used on: Home ("From idea to impact").
+
+[REUSE: Stats – About facts]
+  - 2 offices: Umeå, Sweden and Ludhiana, India
+  - 4 service areas: Data & Analytics, AI & Automation, Business Applications, Digital Experience
+  - End-to-end delivery: from first workshop to long-term support
+  - 1 team: working side by side across borders
+  Used on: About (hero).
+
+[REUSE: Process – How we work]
+  01 Discover: We dig into your goals, users and existing systems to understand the real problem worth solving.
+  02 Design: Together we shape the solution, test ideas early with prototypes and agree on a realistic plan.
+  03 Build: Agile teams deliver in short cycles, so you see working results early and can steer as we go.
+  04 Evolve: After launch we monitor, support and improve, so your solution grows with your business.
+  Used on: About (full), Services overview (short).
+
+[REUSE: Values]
+  See Section 1, VALUES, and PAGE: About › What we stand for.
+  Used on: About.
+
+[REUSE: Offices block]
+  Sweden: Tvistevägen 48, 907 36 Umeå, Sweden
+  India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
+  Used on: Footer, About, Careers, Contact.
+
+[REUSE: CTA – Let's build what's next]
+  Heading: Let's build what's next, together
+  Body: Tell us about your challenge and we'll help you find the right way forward.
+  Button: Contact Us → /contact
+  Used on: Home, Services, Industries, every industry page, About, Sustainability.
+
+[REUSE: Founders]
+  - Abhishek Malhotra, Co-founder (photo: images/founders/Abhishek_Malhotra.png)
+  - Aman Malhotra, Co-founder (photo: images/founders/Aman_Malhotra.png)
+  NOTE: Name and role only. No bios, quotes or other details.
+  Used on: Home, About.
+
+[REUSE: Certifications / partners]
+  None in source. Technologies named in content: Power BI (Manufacturing). App tech stack (products only): Google Gemini, Supabase, RevenueCat, Groq. Do not present any of these as partnerships.
+
+
+=====================================================================
+6. IMAGE MAP
+=====================================================================
+All images are in the /images folder at the project root. These are the only image files available. Do not reference any other image paths.
+
+images/logo/
+  logo.svg: the ProxieStudio logo (outline "P" mark + wordmark). Header and footer.
+  favicon-light.png: favicon for light browser themes.
+  favicon-dark.png: favicon for dark browser themes.
+  apple-touch-icon.png: home-screen icon for iOS.
+
+images/founders/
+  Abhishek_Malhotra.png: Abhishek Malhotra, Co-founder. [REUSE: Founders]
+  Aman_Malhotra.png: Aman Malhotra, Co-founder. [REUSE: Founders]
+  Used on: Home ("Meet the founders") and About ("The people behind Proxie").
+
+images/brands/
+  logo-vans.png, logo-mclaren.png, logo-mercedes.png, logo-daimler.png, logo-bufferleaf.png: client logos. [REUSE: Client logos]
+  Used on: Home, About.
+
+images/testimonials/
+  Type-2a.jpeg: Erik Jakobsson, Volvo Cars.
+  Type2b.jpg: Kayla Ray, Daimler India.
+  Type2c.webp: Michelle Mccoy, Vans Singapore.
+  Type-1a.png, Type-1b.png: not linked to any named testimonial. Use them only as supporting visuals in the testimonials area; never attach names, quotes or roles to them.
+  Rajesh Mehra (Mercedes-Benz India) has no photo.
+  [REUSE: Testimonials]
+
+images/graph.svg
+  The launch-timeline chart for [REUSE: Stat – 2 weeks to beta users]. Used on: Home ("From idea to impact").
+
+Pages without a matching image (services, industries, products, sustainability, careers, contact, legal) have no imagery. Do not use stock photos or placeholder images for them.
+
+=====================================================================
+END OF FILE
+=====================================================================
