@@ -60,7 +60,7 @@ export const kinetic = {
 	/** Tighten: weight characters start from before settling at the heading's own weight */
 	weightLight: 300,
 	/** Hover and proximity: extra weight at the pointer */
-	weightBoost: 140,
+	weightBoost: 110,
 	/** Proximity: falloff radius, in multiples of the font size */
 	radius: 2.2,
 	/** Velocity: degrees of skew per px/frame of scroll velocity */
