@@ -254,10 +254,11 @@ html.lenis body {
 }
 
 .split-line-mask {
-	/* Padding stops ascenders and descenders being clipped by the mask;
-	   the negative margin keeps the line box exactly where it was. */
-	padding-block: 0.1em;
-	margin-block: -0.1em;
+	/* Clip with clip-path rather than SplitText's overflow: clip, so the mask can
+	   reach past the line box (ascenders, descenders, overhangs) without padding
+	   or margins: block margins would collapse and change the heading's height. */
+	overflow: visible !important;
+	clip-path: inset(-0.3em -0.5em);
 }
 
 .kinetic-word,

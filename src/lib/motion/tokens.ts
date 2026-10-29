@@ -41,8 +41,8 @@ export const distance = {
 	reveal: 28,
 	/** Parallax travel, in percent of the element's height */
 	parallax: 8,
-	/** Masked line rise: start offset in percent of the line's height (clears the mask's padding) */
-	rise: 120,
+	/** Masked line rise: start offset in percent of the line's height (clears the mask's 0.3em overreach) */
+	rise: 140,
 	/** Character/word lift on hover and pointer proximity, in percent of its height */
 	lift: -12
 } as const;

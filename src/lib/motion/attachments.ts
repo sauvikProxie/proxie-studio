@@ -11,7 +11,7 @@
 import type { Attachment } from 'svelte/attachments';
 import { DrawSVGPlugin, gsap, ScrollTrigger, SplitText } from './gsap';
 import { getLenis } from './smooth-scroll';
-import { kineticSplit } from './split';
+import { guardNodes, kineticSplit, type KineticSplit } from './split';
 import {
 	DESKTOP,
 	distance,
@@ -108,12 +108,23 @@ export function heroIntro(): Attachment<HTMLElement> {
 			gsap.set(title, { visibility: 'visible' });
 			if (!motion || shownByFallback) return;
 
-			const groups = title.querySelectorAll<HTMLElement>('[data-line-group]');
+			const groups = Array.from(title.querySelectorAll<HTMLElement>('[data-line-group]'));
+			const targets = groups.length ? groups : [title];
+			// SplitText works on a copy, so Svelte's text nodes survive the revert (see guardNodes).
+			// If Svelte changes the title mid-intro (navigation), the intro just ends.
+			const guard = guardNodes(title, targets, () => finish());
+			const finish = () => {
+				split?.revert();
+				split = null;
+				guard.in();
+				title.removeAttribute(BUSY);
+			};
 			// Pointer effects on the title (kinetic) wait until the intro is done
 			title.setAttribute(BUSY, '');
+			guard.out();
 			// autoSplit re-splits when the webfont swaps in (or the width changes) and
 			// carries the running tween over, so there's no need to wait for fonts.
-			split = SplitText.create(groups.length ? groups : title, {
+			split = SplitText.create(targets, {
 				type: 'lines',
 				mask: 'lines',
 				linesClass: 'split-line',
@@ -129,18 +140,12 @@ export function heroIntro(): Attachment<HTMLElement> {
 						delay: 0.05,
 						// Restore natural text flow once revealed
 						onComplete: () => {
-							if (cancelled) return;
-							self.revert();
-							title.removeAttribute(BUSY);
+							if (!cancelled) finish();
 						}
 					})
 			});
 
-			return () => {
-				split?.revert();
-				split = null;
-				title.removeAttribute(BUSY);
-			};
+			return finish;
 		});
 
 		return () => {
@@ -671,7 +676,7 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 					disposers.push(onVelocity(skewTo));
 				}
 
-				let split: SplitText | null = null;
+				let handle: KineticSplit | null = null;
 				let risen = false;
 				// Scrubbed tweens belong to one split; killed before a re-split
 				let scrubbed: gsap.core.Tween[] = [];
@@ -683,18 +688,24 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 					scrubbed = [];
 				};
 
-				const unclip = (self: SplitText) => gsap.set(self.masks, { overflow: 'visible' });
+				const unclip = (self: SplitText) => gsap.set(self.masks, { clipPath: 'none' });
 				// Pointer effects drop their cached positions when the text is re-split
 				let onResplit = () => {};
 
+				const eager = rise || scroll.has('sweep') || scroll.has('tighten');
 				const create = () =>
 					context.add(() => {
-						split = kineticSplit(node, {
+						handle = kineticSplit(node, {
 							lines: rise || unit === 'chars',
 							mask: rise,
 							unit,
 							inlineWords: words && !pointer,
 							alive: () => alive,
+							// Svelte changed the text while split (already reverted): split the new text
+							onStale: () => {
+								handle = null;
+								if (eager && alive) create();
+							},
 							onSplit(self, weighted) {
 								onResplit();
 								if (scroll.has('sweep')) {
@@ -744,7 +755,10 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 										if (!alive) return;
 										// Rise only: back to plain text. Otherwise keep the split, unmasked.
 										if (unit) unclip(self);
-										else self.revert();
+										else {
+											handle?.finish();
+											handle = null;
+										}
 									}
 								});
 							},
@@ -753,14 +767,14 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 					});
 
 				// Scroll effects split up front; pointer-only effects split on first use
-				if (rise || scroll.has('sweep') || scroll.has('tighten')) create();
+				if (eager) create();
 
 				if (pointer) {
 					const zone = (options.zone && node.closest<HTMLElement>(options.zone)) || node.parentElement || node;
 					const ensureSplit = () => {
 						if (node.hasAttribute(BUSY)) return null; // the hero intro still owns the text
-						if (!split) create();
-						return split ? ((words ? split.words : split.chars) as HTMLElement[]) : null;
+						if (!handle) create();
+						return handle ? ((words ? handle.split.words : handle.split.chars) as HTMLElement[]) : null;
 					};
 					disposers.push(
 						pointer === 'hover' ? hoverEffect(zone, ensureSplit) : proximityEffect(node, zone, ensureSplit, (reset) => (onResplit = reset))
@@ -770,8 +784,8 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 				return () => {
 					disposers.forEach((dispose) => dispose());
 					killScrubbed();
-					split?.revert();
-					split = null;
+					handle?.finish();
+					handle = null;
 				};
 			},
 			{ finePointer: FINE_POINTER }

@@ -30,9 +30,13 @@ export interface KineticSplitOptions {
 	onRevert?: () => void;
 	/** Return false once the owner is being torn down (skips re-measuring). */
 	alive?: () => boolean;
+	/** The text changed while split (it has been reverted): split it again if needed. */
+	onStale?: () => void;
 }
 
 const WHITESPACE = /^[ \t\n\r\f]+$/;
+/** Debounce for re-splitting on container resize, in ms (the same as SplitText's autoSplit). */
+const RESPLIT_DELAY = 200;
 const segmenter =
 	typeof Intl !== 'undefined' && 'Segmenter' in Intl
 		? new Intl.Segmenter(undefined, { granularity: 'grapheme' })
@@ -93,14 +97,62 @@ function setAttribute(element: Element, name: string, value: string) {
 }
 
 /**
+ * Lets SplitText work on a copy of each target's content.
+ *
+ * SplitText empties the original text nodes and reverts by resetting
+ * innerHTML, which replaces the nodes Svelte keeps references to (text and
+ * {#if} anchors): later updates (e.g. navigating between two pages of the same
+ * route) would then land in detached nodes and the old text would stay on
+ * screen. Instead the original nodes wait in a fragment, where Svelte can keep
+ * updating them, and come back on the final revert. If they change while the
+ * text is split, or a split target is removed, `onStale` runs.
+ */
+export function guardNodes(root: HTMLElement, targets: readonly HTMLElement[], onStale: () => void) {
+	const stores = targets.map(() => document.createDocumentFragment());
+	let away = false;
+	const observer = new MutationObserver(() => onStale());
+
+	return {
+		/** Move the originals into the fragments; the targets get copies to split. */
+		out() {
+			if (away) return;
+			targets.forEach((target, i) => {
+				const copies = Array.from(target.childNodes, (node) => node.cloneNode(true));
+				stores[i].replaceChildren(...target.childNodes);
+				target.replaceChildren(...copies);
+				observer.observe(stores[i], { subtree: true, childList: true, characterData: true });
+			});
+			if (root !== targets[0]) observer.observe(root, { childList: true });
+			away = true;
+		},
+		/** Put the originals (with any updates) back in place of SplitText's copy. */
+		in() {
+			if (!away) return;
+			observer.disconnect();
+			targets.forEach((target, i) => target.replaceChildren(...stores[i].childNodes));
+			away = false;
+		}
+	};
+}
+
+export interface KineticSplit {
+	split: SplitText;
+	/** Final revert: back to the original (Svelte-owned) nodes. */
+	finish: () => void;
+}
+
+/**
  * Split `root` (or its two-tone [data-line-group] children) for kinetic
  * effects. Create it inside a gsap context so it reverts with it.
  */
-export function kineticSplit(root: HTMLElement, options: KineticSplitOptions): SplitText {
-	const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-line-group]'));
-	const targets = groups.length ? groups : [root];
+export function kineticSplit(root: HTMLElement, options: KineticSplitOptions): KineticSplit {
 	const chars = options.unit === 'chars';
-	const control = root.closest<HTMLElement>('a, button') ?? (chars ? root.querySelector<HTMLElement>('a, button') : null);
+	const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-line-group]'));
+	const outerControl = root.closest<HTMLElement>('a, button');
+	const innerControl = chars && !outerControl ? root.querySelector<HTMLElement>('a, button') : null;
+	const control = outerControl ?? innerControl;
+	// Text inside a link/button (e.g. <h3><a>…</a></h3>) is split inside it, so it stays in the link
+	const targets = groups.length ? groups : innerControl ? [innerControl] : [root];
 	const isHeading = /^H[1-6]$/.test(root.tagName);
 	const weight = getComputedStyle(root).fontWeight;
 
@@ -110,15 +162,43 @@ export function kineticSplit(root: HTMLElement, options: KineticSplitOptions): S
 	let aria: 'auto' | 'hidden' | 'none' = 'none';
 	if (options.unit && !control && isHeading) aria = groups.length ? 'hidden' : 'auto';
 
-	let advances = chars ? measureAdvances(targets) : null;
-	let restore: (() => void)[] = [];
+	// Measured on the whole text: character advances, and the root's width.
+	// Split lines can shrink a shrink-to-fit heading to its widest line, so its
+	// width is held while split (and re-split when its container resizes).
+	let advances: number[] | null = null;
+	let width = 0;
+	const measure = () => {
+		if (chars) advances = measureAdvances(targets);
+		width = root.getBoundingClientRect().width;
+	};
+	measure();
 
+	let restore: (() => void)[] = [];
 	const undo = () => {
 		restore.forEach((fn) => fn());
 		restore = [];
 	};
 
-	return SplitText.create(targets, {
+	// autoSplit only watches the split elements, which can't grow while their width
+	// is held; so also re-split when the viewport width changes (fluid type follows it).
+	let viewportWidth = window.innerWidth;
+	let timer = 0;
+	const stopWatching = () => {
+		clearTimeout(timer);
+		window.removeEventListener('resize', onResize);
+	};
+	const onResize = () => {
+		clearTimeout(timer);
+		timer = window.setTimeout(() => {
+			if (!split.isSplit) return stopWatching();
+			if (window.innerWidth === viewportWidth) return;
+			viewportWidth = window.innerWidth;
+			split.split(config);
+		}, RESPLIT_DELAY);
+	};
+	if (options.lines) window.addEventListener('resize', onResize);
+
+	const config: SplitText.Vars = {
 		type: [options.lines && 'lines', options.unit && 'words', chars && 'chars'].filter(Boolean).join(','),
 		mask: options.mask ? 'lines' : undefined,
 		linesClass: 'split-line',
@@ -133,20 +213,50 @@ export function kineticSplit(root: HTMLElement, options: KineticSplitOptions): S
 			if (control && controlLabel) restore.push(setAttribute(control, 'aria-label', controlLabel));
 
 			// Lock each character to its measured advance; only then can weight change safely
-			const weighted = !!advances && advances.length === self.chars.length;
-			if (weighted) {
-				self.chars.forEach((char, i) => ((char as HTMLElement).style.width = `${advances![i]}em`));
+			const locked = advances;
+			const weighted = !!locked && locked.length === self.chars.length;
+			if (locked && weighted) {
+				self.chars.forEach((char, i) => ((char as HTMLElement).style.width = `${locked[i]}em`));
 				restore.push(setAttribute(root, 'data-kinetic-weight', ''));
 				root.style.setProperty('--kw', weight);
 				restore.push(() => root.style.removeProperty('--kw'));
+			}
+			if (options.lines) {
+				root.style.minInlineSize = `${width}px`;
+				restore.push(() => root.style.removeProperty('min-inline-size'));
 			}
 			return options.onSplit(self, weighted);
 		},
 		onRevert() {
 			undo();
 			options.onRevert?.();
-			// Re-measure on the whole text before autoSplit splits it again (not on teardown)
-			if (chars && options.alive?.() !== false && root.isConnected) advances = measureAdvances(targets);
+			const teardown = options.alive?.() === false || !root.isConnected;
+			// Final revert (not an autoSplit/resize re-split): hand the nodes back to Svelte
+			if (finishing || teardown) guard.in();
+			if (teardown) {
+				stopWatching();
+				return;
+			}
+			// Re-measure on the whole text before it is split again
+			measure();
 		}
+	};
+
+	let finishing = false;
+	const finish = () => {
+		finishing = true;
+		split.revert();
+		finishing = false;
+		guard.in(); // also when a gsap context already reverted the split
+	};
+	// Content changed under the split (Svelte update): the owner re-creates it
+	const guard = guardNodes(root, targets, () => {
+		if (!split.isSplit) return;
+		finish();
+		options.onStale?.();
 	});
+
+	guard.out();
+	const split = SplitText.create(targets, config);
+	return { split, finish };
 }
