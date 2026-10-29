@@ -243,11 +243,37 @@ html.lenis body {
 	overflow: clip;
 }
 
-/* ---------- SplitText masks ---------- */
+/* ---------- SplitText (hero intro + kinetic typography) ----------
+ * SplitText uses <span> wrappers (valid inside headings and links) and leaves
+ * their display to CSS. Lines must be blocks: transforms don't apply to
+ * inline boxes, so an inline line can't rise out of its mask.
+ */
+.split-line,
 .split-line-mask {
-	/* small vertical padding stops descenders being clipped by the mask */
-	padding-bottom: 0.08em;
-	margin-bottom: -0.08em;
+	display: block;
+}
+
+.split-line-mask {
+	/* Padding stops ascenders and descenders being clipped by the mask;
+	   the negative margin keeps the line box exactly where it was. */
+	padding-block: 0.1em;
+	margin-block: -0.1em;
+}
+
+.kinetic-word,
+.kinetic-char {
+	display: inline-block;
+}
+
+/* Paragraph words stay inline so they read and wrap exactly like plain text */
+.kinetic-word--inline {
+	display: inline;
+}
+
+/* Characters are locked to their measured (kerned) width, so changing the
+   weight never moves their neighbours. --kw: base weight, --kb: pointer boost. */
+[data-kinetic-weight] .kinetic-char {
+	font-weight: calc(var(--kw) + var(--kb, 0));
 }
 
 /* =====================================================================

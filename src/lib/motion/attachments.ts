@@ -24,6 +24,9 @@ import {
 
 type Conditions = { motion: boolean; reduced: boolean };
 
+/** Set on a title while another animation owns its split (pointer effects wait). */
+const BUSY = 'data-kinetic-busy';
+
 /** Run `setup` inside a matchMedia context that reverts on destroy. */
 function withMotion(
 	node: Element,
@@ -98,6 +101,8 @@ export function heroIntro(): Attachment<HTMLElement> {
 			if (!motion || shownByFallback) return;
 
 			const groups = title.querySelectorAll<HTMLElement>('[data-line-group]');
+			// Pointer effects on the title (kinetic) wait until the intro is done
+			title.setAttribute(BUSY, '');
 			// autoSplit re-splits when the webfont swaps in (or the width changes) and
 			// carries the running tween over, so there's no need to wait for fonts.
 			split = SplitText.create(groups.length ? groups : title, {
@@ -109,14 +114,16 @@ export function heroIntro(): Attachment<HTMLElement> {
 				autoSplit: true,
 				onSplit: (self) =>
 					gsap.from(self.lines, {
-						yPercent: 112,
+						yPercent: distance.rise,
 						duration: duration.slower,
 						ease: ease.out,
 						stagger: stagger.base,
 						delay: 0.05,
 						// Restore natural text flow once revealed
 						onComplete: () => {
-							if (!cancelled) self.revert();
+							if (cancelled) return;
+							self.revert();
+							title.removeAttribute(BUSY);
 						}
 					})
 			});
@@ -124,6 +131,7 @@ export function heroIntro(): Attachment<HTMLElement> {
 			return () => {
 				split?.revert();
 				split = null;
+				title.removeAttribute(BUSY);
 			};
 		});
 

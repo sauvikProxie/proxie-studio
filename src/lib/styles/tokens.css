@@ -126,6 +126,15 @@
 	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 	--ease-in: cubic-bezier(0.55, 0, 1, 0.45);
 
+	/* Kinetic typography (see kinetic, distance and stagger in motion/tokens.ts) */
+	--kinetic-rise: 120%;
+	--kinetic-lift: -12%;
+	--kinetic-stagger-char: 20ms;
+	--kinetic-sweep-from: 0.18;
+	--kinetic-weight-light: 300;
+	--kinetic-weight-boost: 140;
+	--kinetic-skew-max: 4deg;
+
 	/* ---------- Layers ---------- */
 	--z-header: 50;
 	--z-menu: 60;
