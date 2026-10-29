@@ -18,7 +18,9 @@ import {
 	duration,
 	ease,
 	FINE_POINTER,
+	heroIntroStyle,
 	kinetic as k,
+	kineticPrepare,
 	kineticPresets,
 	kineticRange,
 	MOTION_OK,
@@ -84,16 +86,21 @@ export function reveal(options: RevealOptions = {}): Attachment<HTMLElement> {
 }
 
 /* ------------------------------------------------------------------ */
-/* Hero intro: SplitText masked line reveal                            */
+/* Hero intro                                                          */
 /* ------------------------------------------------------------------ */
 
 /**
- * Attach to a hero container. [data-hero-title] is split into masked lines
- * that slide up one by one. If it contains [data-line-group] children
- * (two-tone headlines), each group is split separately so the quieter line
- * keeps its colour. The subheadline/CTA ([data-hero-fade]) fade up with a CSS
- * animation that uses the same motion tokens (see global.css), so they paint
- * without waiting for JavaScript.
+ * Attach to a hero container. [data-hero-title] comes in as set by
+ * heroIntroStyle (motion/tokens.ts):
+ * - 'fade': its two-tone lines ([data-line-group]), or the whole title, fade
+ *   and rise in turn. The real text nodes paint on the first frame, so the
+ *   headline's LCP is the same as with no animation.
+ * - 'mask': SplitText masked lines slide up one by one (each two-tone group is
+ *   split separately so the quieter line keeps its colour). The text is only
+ *   fully painted when the split reverts, which delays the LCP (see README).
+ * The subheadline/CTA ([data-hero-fade]) fade up with a CSS animation that
+ * uses the same motion tokens (see global.css), so they paint without waiting
+ * for JavaScript.
  */
 export function heroIntro(): Attachment<HTMLElement> {
 	return (node) => {
@@ -110,6 +117,25 @@ export function heroIntro(): Attachment<HTMLElement> {
 
 			const groups = Array.from(title.querySelectorAll<HTMLElement>('[data-line-group]'));
 			const targets = groups.length ? groups : [title];
+
+			if (heroIntroStyle === 'fade') {
+				// Pointer effects on the title (kinetic) wait until the intro is done
+				title.setAttribute(BUSY, '');
+				const done = () => title.removeAttribute(BUSY);
+				gsap.from(targets, {
+					opacity: 0,
+					y: distance.reveal,
+					duration: duration.slower,
+					ease: ease.out,
+					stagger: stagger.base,
+					clearProps: 'opacity,transform',
+					onComplete: () => {
+						if (!cancelled) done();
+					}
+				});
+				return done;
+			}
+
 			// SplitText works on a copy, so Svelte's text nodes survive the revert (see guardNodes).
 			// If Svelte changes the title mid-intro (navigation), the intro just ends.
 			const guard = guardNodes(title, targets, () => finish());
@@ -766,8 +792,19 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 						});
 					});
 
-				// Scroll effects split up front; pointer-only effects split on first use
-				if (eager) create();
+				// Scroll effects split shortly before the text scrolls into view (keeps the work
+				// off the page load); pointer-only effects split on first use
+				if (eager) {
+					ScrollTrigger.create({
+						trigger: node,
+						start: kineticPrepare,
+						end: 'max',
+						once: true,
+						onEnter: () => {
+							if (!handle) create();
+						}
+					});
+				}
 
 				if (pointer) {
 					const zone = (options.zone && node.closest<HTMLElement>(options.zone)) || node.parentElement || node;

@@ -50,6 +50,14 @@ export const distance = {
 /** ScrollTrigger start position for reveals. */
 export const revealStart = 'top 86%';
 
+/**
+ * How hero headlines come in (heroIntro):
+ * - 'fade': lines fade and rise on the real text nodes; LCP unaffected.
+ * - 'mask': SplitText lines rise out of masks; the headline is only fully
+ *   painted at the end, so its LCP is ~1.3 s later (see README).
+ */
+export const heroIntroStyle: 'fade' | 'mask' = 'fade';
+
 /* ------------------------------------------------------------------ */
 /* Kinetic typography                                                  */
 /* ------------------------------------------------------------------ */
@@ -70,6 +78,9 @@ export const kinetic = {
 	/** Scrubbed effects: catch-up smoothing in seconds (ScrollTrigger scrub) */
 	scrub: 0.6
 } as const;
+
+/** Scroll effects split their text once it is this close (half a viewport below the fold). */
+export const kineticPrepare = 'top 150%';
 
 /** ScrollTrigger [start, end] for the scrubbed text effects. */
 export const kineticRange = {
