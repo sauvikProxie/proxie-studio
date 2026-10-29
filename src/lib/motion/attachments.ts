@@ -489,6 +489,143 @@ function onVelocity(set: (skew: number) => void) {
 	};
 }
 
+type SplitItems = () => HTMLElement[] | null;
+
+/** Lift (and, for locked characters, swell) every item; the card's hover or keyboard focus drives it. */
+function hoverEffect(zone: HTMLElement, ensureSplit: SplitItems) {
+	let items: HTMLElement[] | null = null;
+	const enter = () => {
+		items = ensureSplit();
+		if (!items) return;
+		gsap.to(items, {
+			yPercent: distance.lift,
+			'--kb': k.weightBoost,
+			duration: duration.base,
+			ease: ease.out,
+			stagger: stagger.char,
+			overwrite: true
+		});
+	};
+	const leave = () => {
+		if (!items) return;
+		gsap.to(items, {
+			yPercent: 0,
+			'--kb': 0,
+			duration: duration.base,
+			ease: ease.out,
+			stagger: { each: stagger.char, from: 'end' },
+			overwrite: true
+		});
+	};
+	const focusIn = (event: FocusEvent) => (event.target as Element).matches(':focus-visible') && enter();
+
+	zone.addEventListener('pointerenter', enter);
+	zone.addEventListener('pointerleave', leave);
+	zone.addEventListener('focusin', focusIn);
+	zone.addEventListener('focusout', leave);
+	return () => {
+		zone.removeEventListener('pointerenter', enter);
+		zone.removeEventListener('pointerleave', leave);
+		zone.removeEventListener('focusin', focusIn);
+		zone.removeEventListener('focusout', leave);
+		if (items) gsap.killTweensOf(items);
+	};
+}
+
+interface ProximityPoint {
+	x: number;
+	y: number;
+	f: number;
+	boost: gsap.QuickToFunc;
+	lift: gsap.QuickToFunc;
+}
+
+/**
+ * Items near the pointer swell and lift, falling off with distance. One
+ * pointermove listener stores the position; a GSAP ticker callback applies it
+ * with quickTo. Positions are measured once when the pointer enters (page
+ * coordinates, so scrolling doesn't invalidate them): no layout reads per frame.
+ */
+function proximityEffect(
+	node: HTMLElement,
+	zone: HTMLElement,
+	ensureSplit: SplitItems,
+	onResplit: (reset: () => void) => void
+) {
+	let points: ProximityPoint[] | null = null;
+	let radius = 1;
+	let x = 0;
+	let y = 0;
+	let dirty = false;
+
+	const measure = () => {
+		const items = ensureSplit();
+		if (!items) return;
+		radius = k.radius * (parseFloat(getComputedStyle(node).fontSize) || 16);
+		const quick = { duration: duration.base, ease: 'power3' };
+		points = items.map((item) => {
+			const rect = item.getBoundingClientRect();
+			return {
+				x: rect.left + rect.width / 2 + window.scrollX,
+				y: rect.top + rect.height / 2 + window.scrollY,
+				f: 0,
+				boost: gsap.quickTo(item, '--kb', quick),
+				lift: gsap.quickTo(item, 'yPercent', quick)
+			};
+		});
+	};
+
+	const tick = () => {
+		if (!dirty || !points) return;
+		dirty = false;
+		for (const point of points) {
+			const distanceTo = Math.hypot(x - point.x, y - point.y);
+			const linear = Math.max(0, 1 - distanceTo / radius);
+			const f = linear * linear * (3 - 2 * linear); // smoothstep falloff
+			if (f === point.f) continue;
+			point.f = f;
+			point.boost(k.weightBoost * f);
+			point.lift(distance.lift * f);
+		}
+	};
+
+	const rest = () => {
+		points?.forEach((point) => {
+			point.f = 0;
+			point.boost(0);
+			point.lift(0);
+		});
+		points = null;
+	};
+
+	const move = (event: PointerEvent) => {
+		x = event.pageX;
+		y = event.pageY;
+		dirty = true;
+		if (!points) measure(); // first move, or after a re-split
+	};
+	const enter = (event: PointerEvent) => {
+		move(event);
+		gsap.ticker.add(tick);
+	};
+	const leave = () => {
+		gsap.ticker.remove(tick);
+		rest();
+	};
+
+	onResplit(() => (points = null));
+	zone.addEventListener('pointerenter', enter);
+	zone.addEventListener('pointermove', move);
+	zone.addEventListener('pointerleave', leave);
+	return () => {
+		zone.removeEventListener('pointerenter', enter);
+		zone.removeEventListener('pointermove', move);
+		zone.removeEventListener('pointerleave', leave);
+		gsap.ticker.remove(tick);
+		points = null;
+	};
+}
+
 /**
  * Kinetic typography for headings and prominent text. Pick a preset from
  * kineticPresets (motion/tokens.ts) or pass options:
@@ -547,6 +684,8 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 				};
 
 				const unclip = (self: SplitText) => gsap.set(self.masks, { overflow: 'visible' });
+				// Pointer effects drop their cached positions when the text is re-split
+				let onResplit = () => {};
 
 				const create = () =>
 					context.add(() => {
@@ -557,6 +696,7 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 							inlineWords: words && !pointer,
 							alive: () => alive,
 							onSplit(self, weighted) {
+								onResplit();
 								if (scroll.has('sweep')) {
 									const [start, end] = kineticRange.sweep;
 									scrubbed.push(
@@ -614,6 +754,18 @@ export function kinetic(effect: KineticEffect = 'section'): Attachment<HTMLEleme
 
 				// Scroll effects split up front; pointer-only effects split on first use
 				if (rise || scroll.has('sweep') || scroll.has('tighten')) create();
+
+				if (pointer) {
+					const zone = (options.zone && node.closest<HTMLElement>(options.zone)) || node.parentElement || node;
+					const ensureSplit = () => {
+						if (node.hasAttribute(BUSY)) return null; // the hero intro still owns the text
+						if (!split) create();
+						return split ? ((words ? split.words : split.chars) as HTMLElement[]) : null;
+					};
+					disposers.push(
+						pointer === 'hover' ? hoverEffect(zone, ensureSplit) : proximityEffect(node, zone, ensureSplit, (reset) => (onResplit = reset))
+					);
+				}
 
 				return () => {
 					disposers.forEach((dispose) => dispose());
