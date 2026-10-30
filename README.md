@@ -1,4 +1,4 @@
-# Proxie Studio website
+# Proxie Studio website 
 
 SvelteKit 3 + Svelte 5 (runes) + TypeScript. Motion by GSAP (ScrollTrigger, SplitText, DrawSVGPlugin) and Lenis.
 All pages are prerendered; old URLs are 301-redirected at runtime.
