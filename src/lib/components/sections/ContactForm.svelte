@@ -201,7 +201,7 @@
 	}
 
 	.message--error {
-		background: #f6e3e0;
+		background: #f8e1e4;
 		color: var(--color-error);
 	}
 

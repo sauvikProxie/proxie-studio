@@ -28,11 +28,9 @@ export const offices: readonly Office[] = [
 	}
 ];
 
-/** Social profile URLs will be added later; each links to "#" for now. */
 export const socials: readonly Link[] = [
-	{ label: 'LinkedIn', href: '#' },
-	{ label: 'Instagram', href: '#' },
-	{ label: 'Facebook', href: '#' }
+	{ label: 'Instagram', href: 'https://www.instagram.com/proxie_studio/' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/company/weareproxie/home/' }
 ];
 
 export const copyright = (year: number) => `© ${year} Proxie Studio. All rights reserved.`;

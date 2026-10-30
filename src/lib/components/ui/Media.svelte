@@ -85,8 +85,8 @@
 		position: absolute;
 		inset: 0;
 		background:
-			linear-gradient(180deg, rgb(10 15 12 / 0) 50%, rgb(10 15 12 / 0.45) 100%),
-			linear-gradient(0deg, rgb(11 122 69 / 0.12), rgb(11 122 69 / 0.12));
+			linear-gradient(180deg, rgb(21 16 14 / 0) 50%, rgb(21 16 14 / 0.45) 100%),
+			linear-gradient(0deg, rgb(184 57 46 / 0.12), rgb(184 57 46 / 0.12));
 		mix-blend-mode: multiply;
 		pointer-events: none;
 	}

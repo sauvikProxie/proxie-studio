@@ -68,8 +68,8 @@
 	.drift {
 		inset: 0;
 		background:
-			radial-gradient(70% 55% at 50% 100%, rgb(31 196 106 / 0.28), transparent 70%),
-			linear-gradient(165deg, #eef6f0, #dde7e0);
+			radial-gradient(70% 55% at 50% 100%, rgb(226 87 76 / 0.28), transparent 70%),
+			linear-gradient(165deg, #f9f0eb, #efe0d8);
 	}
 
 	.drift :global(picture) {

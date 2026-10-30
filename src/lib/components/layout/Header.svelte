@@ -327,7 +327,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: rgb(242 243 240 / 0.78);
+		background: rgb(244 241 236 / 0.78);
 		backdrop-filter: blur(16px) saturate(1.4);
 		-webkit-backdrop-filter: blur(16px) saturate(1.4);
 		border-bottom: 1px solid var(--color-line);

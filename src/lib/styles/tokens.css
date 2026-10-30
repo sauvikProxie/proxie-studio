@@ -8,44 +8,49 @@
 
 :root {
 	/* ---------- Colour ----------
-	 * Neutral base: cool light grey canvas with white cards.
-	 * Ink: green-black. Accent: emerald (text/buttons) with a lime and
-	 * bright-green glow family used decoratively (gradients, dots, light).
-	 * Contrast (WCAG): ink/paper 17:1, ink-muted/paper 7.2:1,
-	 * accent/paper 4.9:1, white on accent 5.4:1, ink on lime 14.9:1,
-	 * lime on ink 14.9:1, on-ink-muted/ink 8.8:1.
+	 * Soft Vermilion. Neutral base: warm off-white canvas with white cards.
+	 * Ink: warm brown-black. Brand: Soft Vermilion #e2574c (accent-bright),
+	 * used for fills, glows and dots. Text and white-label buttons use a
+	 * deeper vermilion (accent), since #e2574c is only 3.7:1 on white.
+	 * A peach highlight (lime/accent-on-ink) plays the role of the old lime.
+	 * The names --color-lime, --color-mint, --glow-green and --glow-lime are
+	 * kept for structure; they now hold warm values.
+	 * Contrast (WCAG): ink/paper 16.8:1, ink-muted/paper 7.5:1,
+	 * ink-subtle/paper 5.4:1, accent/paper 5.1:1, white on accent 5.7:1,
+	 * ink on lime 10.9:1, lime on ink 10.9:1, ink on accent-bright 5.1:1,
+	 * on-ink-muted/ink 8.3:1, error/paper 7:1.
 	 */
-	--color-paper: #f2f3f0;
-	--color-paper-sunken: #e7e9e4;
+	--color-paper: #f4f1ec;
+	--color-paper-sunken: #eae5de;
 	--color-surface: #ffffff;
-	--color-surface-2: #f8f9f7;
-	--color-ink: #0a0f0c;
-	--color-ink-2: #141b17;
-	--color-ink-muted: #4a524d;
-	--color-ink-subtle: #5f6862;
+	--color-surface-2: #faf8f5;
+	--color-ink: #15100e;
+	--color-ink-2: #201916;
+	--color-ink-muted: #554b46;
+	--color-ink-subtle: #6b605a;
 
-	--color-accent: #0b7a45;
-	--color-accent-strong: #075c33;
-	--color-accent-bright: #1fc46a;
-	--color-accent-soft: #ddf2e4;
-	--color-lime: #b9f45e;
-	--color-mint: #7fe8a8;
-	--color-accent-on-ink: #b9f45e;
+	--color-accent: #b8392e;
+	--color-accent-strong: #93291f;
+	--color-accent-bright: #e2574c;
+	--color-accent-soft: #fbe3df;
+	--color-lime: #ffb38a;
+	--color-mint: #f59a8c;
+	--color-accent-on-ink: #ffb38a;
 
-	--color-on-ink: #f2f3f0;
-	--color-on-ink-muted: #a9b1ac;
-	--color-line: rgb(10 15 12 / 0.09);
-	--color-line-strong: rgb(10 15 12 / 0.2);
-	--color-line-on-ink: rgb(242 243 240 / 0.12);
-	--color-chart-muted: #8a928d;
-	--color-focus: #0b7a45;
-	--color-error: #a3261b;
+	--color-on-ink: #f4f1ec;
+	--color-on-ink-muted: #b5aaa4;
+	--color-line: rgb(21 16 14 / 0.09);
+	--color-line-strong: rgb(21 16 14 / 0.2);
+	--color-line-on-ink: rgb(244 241 236 / 0.12);
+	--color-chart-muted: #8a7f79;
+	--color-focus: #b8392e;
+	--color-error: #9e1c2c;
 
 	/* Decorative light: glows, gradients and dot textures */
-	--glow-green: radial-gradient(closest-side, rgb(31 196 106 / 0.55), rgb(31 196 106 / 0));
-	--glow-lime: radial-gradient(closest-side, rgb(185 244 94 / 0.6), rgb(185 244 94 / 0));
-	--gradient-accent: linear-gradient(120deg, #0b7a45 0%, #1fc46a 55%, #b9f45e 100%);
-	--dither: radial-gradient(circle at center, var(--dither-color, rgb(31 196 106 / 0.75)) 0.9px, transparent 1.4px);
+	--glow-green: radial-gradient(closest-side, rgb(226 87 76 / 0.55), rgb(226 87 76 / 0));
+	--glow-lime: radial-gradient(closest-side, rgb(255 179 138 / 0.6), rgb(255 179 138 / 0));
+	--gradient-accent: linear-gradient(120deg, #b8392e 0%, #e2574c 55%, #ffb38a 100%);
+	--dither: radial-gradient(circle at center, var(--dither-color, rgb(226 87 76 / 0.75)) 0.9px, transparent 1.4px);
 	--dither-size: 7px 7px;
 
 	/* ---------- Typography ---------- */
@@ -106,10 +111,10 @@
 	--radius-pill: 999px;
 
 	/* ---------- Shadow ---------- */
-	--shadow-sm: 0 1px 2px rgb(10 15 12 / 0.05), 0 2px 6px -2px rgb(10 15 12 / 0.05);
-	--shadow-md: 0 2px 4px rgb(10 15 12 / 0.03), 0 14px 32px -10px rgb(10 15 12 / 0.14);
-	--shadow-lg: 0 4px 10px rgb(10 15 12 / 0.04), 0 36px 72px -20px rgb(10 15 12 / 0.24);
-	--shadow-glow: 0 18px 48px -14px rgb(31 196 106 / 0.55);
+	--shadow-sm: 0 1px 2px rgb(21 16 14 / 0.05), 0 2px 6px -2px rgb(21 16 14 / 0.05);
+	--shadow-md: 0 2px 4px rgb(21 16 14 / 0.03), 0 14px 32px -10px rgb(21 16 14 / 0.14);
+	--shadow-lg: 0 4px 10px rgb(21 16 14 / 0.04), 0 36px 72px -20px rgb(21 16 14 / 0.24);
+	--shadow-glow: 0 18px 48px -14px rgb(226 87 76 / 0.55);
 	--ring: inset 0 0 0 1px var(--color-line);
 
 	/* ---------- Motion ----------

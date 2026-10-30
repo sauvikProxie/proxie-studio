@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Art from '#lib/components/art/Art.svelte';
+	import ProductArt from '#lib/components/art/ProductArt.svelte';
 	import LaunchGraph from '#lib/components/graph/LaunchGraph.svelte';
 	import Seo from '#lib/components/layout/Seo.svelte';
 	import CtaBlock from '#lib/components/sections/CtaBlock.svelte';
@@ -140,9 +140,9 @@
 		/>
 		<ul class="products" role="list" {@attach reveal({ children: '[data-reveal]', stagger: 0.12 })}>
 			{#each home.products.items as product, i (product.title)}
-				<li class="product on-ink" data-reveal>
+				<li class="product on-ink" data-reveal data-art-host>
 					<div class="product-art">
-						<Art kind={productArt[productIds[i]]} seed={productIds[i]} />
+						<ProductArt kind={productArt[productIds[i]]} />
 					</div>
 					<div class="product-body">
 						<div>
@@ -379,11 +379,18 @@
 		border-radius: var(--radius-xl);
 		background: var(--color-ink);
 		color: var(--color-on-ink);
-		transition: transform var(--dur-slow) var(--ease-out);
+		/* `translate`, not `transform`: the scroll reveal leaves an inline transform */
+		transition:
+			translate var(--dur-base) var(--ease-out),
+			box-shadow var(--dur-base) var(--ease-out);
 	}
 
-	.product:hover {
-		transform: translateY(-4px);
+	/* Hover and keyboard focus share one state; the art reacts too (Art.svelte) */
+	.product:is(:hover, :has(:focus-visible)) {
+		translate: 0 -4px;
+		box-shadow:
+			inset 0 0 0 1px color-mix(in srgb, var(--color-lime) 22%, transparent),
+			0 24px 48px -28px rgb(21 16 14 / 0.55);
 	}
 
 	.product-art {
@@ -409,6 +416,11 @@
 	.product-text {
 		color: var(--color-on-ink-muted);
 		max-width: 38ch;
+		transition: color var(--dur-base) var(--ease-out);
+	}
+
+	.product:is(:hover, :has(:focus-visible)) .product-text {
+		color: var(--color-on-ink);
 	}
 
 	.product-arrow {
@@ -420,11 +432,14 @@
 		border-radius: 50%;
 		background: var(--color-lime);
 		color: var(--color-ink);
-		transition: transform var(--dur-base) var(--ease-out);
+		transition:
+			transform var(--dur-base) var(--ease-out),
+			box-shadow var(--dur-base) var(--ease-out);
 	}
 
-	.product:hover .product-arrow {
-		transform: rotate(-45deg);
+	.product:is(:hover, :has(:focus-visible)) .product-arrow {
+		transform: rotate(-45deg) scale(1.06);
+		box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-lime) 18%, transparent);
 	}
 
 	.stretched::after {

@@ -84,7 +84,7 @@
 
 	.dither {
 		z-index: -1;
-		--dither-color: rgb(31 196 106 / 0.6);
+		--dither-color: rgb(226 87 76 / 0.6);
 		--dither-mask: radial-gradient(60% 70% at 85% 100%, black, transparent 75%);
 	}
 
@@ -254,7 +254,7 @@
 		padding-inline: var(--gutter);
 		margin-bottom: calc(var(--space-4) * -1);
 		pointer-events: none;
-		color: rgb(242 243 240 / 0.06);
+		color: rgb(244 241 236 / 0.06);
 	}
 
 	.wordmark :global(.wordmark-logo) {

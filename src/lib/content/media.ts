@@ -51,7 +51,7 @@ export const pillarArt: Record<string, ArtKind> = {
 	'digital-experience': 'experience'
 };
 
-export const productArt: Record<string, ArtKind> = {
+export const productArt: Record<string, Extract<ArtKind, 'vision' | 'voice'>> = {
 	'blind-companion': 'vision',
 	'session-pilot': 'voice'
 };

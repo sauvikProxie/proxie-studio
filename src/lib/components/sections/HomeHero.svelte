@@ -237,7 +237,7 @@
 		gap: var(--space-2);
 		padding: var(--space-2);
 		border-radius: var(--radius-lg);
-		background: rgb(10 15 12 / 0.35);
+		background: rgb(21 16 14 / 0.35);
 		box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.18);
 		backdrop-filter: blur(14px);
 		-webkit-backdrop-filter: blur(14px);

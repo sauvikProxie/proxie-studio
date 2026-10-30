@@ -56,7 +56,7 @@
 
 	.dither {
 		z-index: -1;
-		--dither-color: rgb(31 196 106 / 0.8);
+		--dither-color: rgb(226 87 76 / 0.8);
 		--dither-mask: radial-gradient(60% 95% at 100% 100%, black 10%, transparent 75%);
 	}
 

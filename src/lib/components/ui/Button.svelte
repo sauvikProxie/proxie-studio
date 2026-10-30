@@ -105,7 +105,7 @@
 		line-height: 1.2;
 		max-width: 100%;
 		isolation: isolate;
-		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 1px 2px rgb(10 15 12 / 0.12);
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 1px 2px rgb(21 16 14 / 0.12);
 		transition:
 			background-color var(--dur-fast) var(--ease-out),
 			box-shadow var(--dur-base) var(--ease-out);
@@ -140,15 +140,15 @@
 
 	.btn--lime {
 		--btn-bg: var(--color-lime);
-		--btn-bg-hover: #cdf98a;
+		--btn-bg-hover: #ffc6a8;
 		--btn-fg: var(--color-ink);
 		--chip-bg: var(--color-ink);
 		--chip-fg: var(--color-lime);
-		box-shadow: 0 0 0 0 rgb(185 244 94 / 0);
+		box-shadow: 0 0 0 0 rgb(255 179 138 / 0);
 	}
 
 	.btn--lime:hover {
-		box-shadow: 0 16px 40px -12px rgb(185 244 94 / 0.6);
+		box-shadow: 0 16px 40px -12px rgb(255 179 138 / 0.6);
 	}
 
 	.btn--light {

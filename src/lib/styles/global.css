@@ -303,12 +303,12 @@ html.lenis body {
 	height: 0.5rem;
 	border-radius: 50%;
 	background: var(--color-accent-bright);
-	box-shadow: 0 0 0 3px rgb(31 196 106 / 0.18);
+	box-shadow: 0 0 0 3px rgb(226 87 76 / 0.18);
 }
 
 .on-ink .eyebrow,
 .eyebrow--ink {
-	background: rgb(242 243 240 / 0.06);
+	background: rgb(244 241 236 / 0.06);
 	box-shadow: inset 0 0 0 1px var(--color-line-on-ink);
 	color: var(--color-on-ink);
 }
@@ -321,7 +321,7 @@ html.lenis body {
 
 @keyframes dot-pulse {
 	50% {
-		box-shadow: 0 0 0 6px rgb(31 196 106 / 0);
+		box-shadow: 0 0 0 6px rgb(226 87 76 / 0);
 	}
 }
 

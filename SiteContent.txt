@@ -69,7 +69,7 @@ CONTACT DETAILS
   Contact form: see PAGE: Contact
 
 SOCIAL LINKS
-  LinkedIn, Instagram, Facebook. Show all three. Each links to "#" for now (profile URLs will be added later).
+  Instagram (https://www.instagram.com/proxie_studio/), LinkedIn (https://www.linkedin.com/company/weareproxie/home/). Show only these two.
 
 BRAND VOICE NOTES
   Observed tone: confident, optimistic, benefit-led, business-focused rather than technical. Short declarative headlines, often a contrast or a pair ("From Insight to Intelligence", "Where Design Meets Function", "Tools with Purpose", "Precision in Every Line"). Body copy speaks directly to the reader ("you", "your business") and keeps "we" for Proxie.
@@ -142,7 +142,7 @@ FOOTER NAV
   Column "Industries": Retail, Energy, Manufacturing, Public Sector
   Column "Company": About, Our Products, Sustainability, Careers, Contact
   Column "Offices": Sweden: Tvistevägen 48, 907 36 Umeå, Sweden | India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India | enquiries@weareproxie.com
-  Social: LinkedIn, Instagram, Facebook (each links to "#" for now)
+  Social: Instagram, LinkedIn
   Legal row: Privacy Policy (/privacy-policy) · Terms & Conditions (/terms) · Blind Companion Privacy Policy (/blind-companion-privacy-policy) · Session Pilot Privacy Policy (/spprivacypolicy)
   Copyright: "© <current year> Proxie Studio. All rights reserved."
   NOTE: Always render the current year.
@@ -229,7 +229,7 @@ FOOTER (old)
   "Services" → Data & AI | /data-ai | → footer "Services" column: Data & Analytics + AI & Automation
   "Services" → Business Applications | /business-applications | → footer "Services" column: Business Applications
   "Services" → Websites | /digital-experience/websites | → footer "Services" column: Digital Experience (pillar replaces the single service)
-  "Follow Us" → LinkedIn / Instagram / Facebook | (no links) | → footer social links | links "#" for now
+  "Follow Us" → Instagram / LinkedIn | (no links) | → footer social links | profile URLs
   "Address" → Sweden / India | — | → footer "Offices" column
   "Privacy & Policy" | /privacy-policy | → Privacy Policy, /privacy-policy | label fixed
   "Blind Nav Privacy & Policy" | /blind-companion-privacy-policy | → Blind Companion Privacy Policy, /blind-companion-privacy-policy | The app is called "Blind Companion" in the policy itself. KEEP THIS URL (likely referenced in App Store / Google Play listings).
@@ -1404,7 +1404,7 @@ SECTIONS
       - Email: enquiries@weareproxie.com
       - Sweden: Tvistevägen 48, 907 36 Umeå, Sweden
       - India: H.M-107 Jamalpur Colony, Ludhiana 141010, Punjab, India
-      - Follow us: LinkedIn · Instagram · Facebook (each links to "#" for now)
+      - Follow us: Instagram · LinkedIn
 
 CTA / CLOSING: —
 ---------------------------------------------------------------
